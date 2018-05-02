@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="cp-1251">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GAME</title>
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="js/JsHttpRequest/JsHttpRequest.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	
+<div class="wrapper container-fluid">
+	
+<div class="header row">
+	<div class="col-2">
+		<img class="logo-img" src="img/team/navi.png" alt="Logo">
+	</div>
+	<div class="col-5">
+		<ul class="list-inline nolist">
+			<li><div><input id="c1" class="check-social" type="checkbox"><label for="c1"></label><br><img class="img-social" src="img/social/vk.png" alt="vk"></div></li>
+			<li><div><input id="c2" class="check-social" type="checkbox"><label for="c2"></label><br><img class="img-social" src="img/social/in.png" alt="inst"></div></li>
+			<li><div><input id="c3" class="check-social" type="checkbox"><label for="c3"></label><br><img class="img-social" src="img/social/tl.png" alt="teleg"></div></li>
+			<li><div><input id="c4" class="check-social" type="checkbox"><label for="c4"></label><br><img class="img-social" src="img/social/tw.png" alt="tw"></div></li>
+			<li><div><input id="c5" class="check-social" type="checkbox"><label for="c5"></label><br><img class="img-social" src="img/social/yt.png" alt="yt"></div></li>
+		</ul>
+	</div>
+	<div class="col-2">
+		<h5>Фаны</h5>
+		<img class="img-head" src="img/fans.png" alt="fans"> <span class="span-main">{col_fans}</span>
+	</div>
+	<div class="col-2">
+		<h5>Дни</h5>
+		<img class="img-head" src="img/calendar.png" alt="days"> <span class="span-main">{col_days}</span>
+	</div>
+	<div class="col-1">
+		<a href=""><img class="img-head" src="img/settings.png" alt="settings"></a>
+	</div>
+
+</div>
+	
+<div class="main row">
+	
+<div class="navigation col-2 pad0">
+		<ul class="list-inline">
+			<a onClick="javascript:show_team();"><li>Состав</li></a>
+			<a href=""><li>Рынок</li></a>
+			<a href=""><li>Рассписание</li></a>
+			<a href=""><li>Турниры</li></a>
+			<a href=""><li>Таблица лидеров</li></a>
+			<a href=""><li><img src="" alt="Реклама"></li></a>
+		</ul>
+</div>
+	
+<div class="content col-10">
+		{mainblock}
+</div>
+	
+</div>
+	
+<div class="footer row align-items-center">
+	<div class="offset-2 col-3">
+		Спонсоры: <span class="span-style">+{sponsors_cash}$</span>/мес.
+	</div>
+	<div class="offset-4 col-3 text-center">
+		<img class="img-social" src="img/money-bag.png" alt="cash"><span class="span-style">{cash}$</span>
+	</div>
+</div>
+
+</div>
+	
+</body>
+</html>
