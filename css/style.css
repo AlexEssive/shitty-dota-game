@@ -1,0 +1,97 @@
+html, body {
+  width: 100%;
+  height: 100%;	
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bold {font-weight:bold;}
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+.float-left {float: left;}
+.float-right {float: right;}
+.none {display: none;}
+.pad0 {padding: 0;}
+.pad15 {padding-right: 15px;}
+.padl15 {padding-left: 15px;}
+.pad10 {padding: 10px 0px;}
+.wdt100 {width: 100%;}
+.font10 {font-size: 10pt;}
+.font11 {font-size: 11pt;}
+.font12 {font-size: 12pt;}
+.img-center {display: block; margin: 0 auto;}
+.span-style {font-weight:bold; color: green;}
+.span-main {font-weight:bold; color: black; font-family:arizonia;}
+.pointer {cursor: pointer;}
+.word-wrap {word-wrap: break-word; overflow-wrap: break-word;}
+.only-read {color: #ddd;}
+.nolist {list-style: none; display: inline-flex;}
+.nolist li { padding-top: 10px; margin-right: 20px; text-align: center;}
+.span-red {font-weight:bold; color: #ddd; color:red;}
+
+h2, h5 {text-transform: uppercase}
+a {text-decoration: none;}
+
+.wrapper {background: #ddd}
+.header {padding-top: 15px; background: #ccc;}
+.content {border: 1px solid white; border-left: none; border-right: none;}
+.footer {padding-bottom: 10px; background: #ccc; padding-top: 10px;}
+.navigation {background: #18AEC7; border: 1px solid white; border-left: none;color:white;}
+.navigation a{color:white;}
+.navigation .list-inline {margin:0;}
+.navigation .list-inline li {border-bottom: 1px solid; padding: 10px;}
+.navigation .list-inline li:hover{background: #01C3F4; cursor: pointer; }
+
+.img-social {width: 25px;}
+.logo-img {height: 100px; display: block; margin: 0 auto; padding: 10px;}
+.img-head {width: 45px; }
+
+.player_card {
+	background: skyblue;
+    margin-right: 15px;
+    padding: 10px;
+	border-radius: 10px;
+}
+
+.player_card img { width: 100%; border: 1px solid;}
+
+.team_list {
+	padding-top: 25px;
+    padding-left: 15px;
+	padding-bottom: 25px;
+}
+
+input[type="checkbox"] { visibility: hidden; }
+label { cursor: pointer; }
+input[type="checkbox"] + label:before {
+  border-radius: 25px;
+  border: 1px solid #333;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 16px;
+  position: relative;
+  left: -4px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: green;
+  color: #333;
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
