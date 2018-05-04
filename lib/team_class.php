@@ -9,8 +9,7 @@ function show_team() {
 
 	foreach ($arr as $value) {
 		list($name,$pos,$year,$about,$img)=$this->get_player_info($value);
-		$list.="
-		<div class='player_card'>
+		$list .="<div class='player_card'>
 			<img src='/img/players/$img'><br>
 			<span>Name: $name</span><br>
 			<span>Pos: $pos</span><br>

@@ -58,12 +58,31 @@ a {text-decoration: none;}
 	border-radius: 10px;
 }
 
-.player_card img { width: 100%; border: 1px solid;}
+.player_card img { height: 253px;
+  width: 221px; border: 1px solid;}
+
+.player_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.player_list a {
+  background: #01C3F4;
+}
+
+.player_list li {
+  color: black;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
 
 .team_list {
-	padding-top: 25px;
-    padding-left: 15px;
-	padding-bottom: 25px;
+  width: 100%;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 25px;
 }
 
 input[type="checkbox"] { visibility: hidden; }
