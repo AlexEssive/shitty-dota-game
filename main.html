@@ -11,6 +11,7 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/new_day.js"></script>
 	<script src="js/market.js"></script>
 	<script src="js/players.js"></script>
 </head>
@@ -33,11 +34,11 @@
 	</div>
 	<div class="col-2">
 		<h5>Фаны</h5>
-		<img class="img-head" src="img/fans.png" alt="fans"> <span class="span-main">228</span>
+		<img class="img-head" src="img/fans.png" alt="fans"> <span id="fans" class="span-main"></span>
 	</div>
-	<div class="col-2">
+	<div id="nextDay" class="col-2">
 		<h5>Дни</h5>
-		<img id="nextDay" class="img-head new-day" src="img/calendar.png" alt="days"> <span class="span-main">322</span>
+		<img class="img-head new-day" src="img/calendar.png" onclick="startNewDay()"> <span id="day" class="span-main"></span>
 	</div>
 	<div class="col-1">
 		<a class="pointer" onclick="showSettings();"><img class="img-head" src="img/settings.png" alt="settings"></a>
@@ -66,10 +67,10 @@
 	
 <div class="footer row align-items-center">
 	<div class="offset-2 col-3">
-		Спонсоры: <span class="span-style">+0$</span>/мес.
+		Спонсоры: <span id="income" class="span-style"></span>/мес.
 	</div>
 	<div class="offset-4 col-3 text-center">
-		<img class="img-social" src="img/money-bag.png" alt="cash"><span class="span-style">0$</span>
+		<img class="img-social" src="img/money-bag.png" alt="cash"><span id="cash" class="span-style"></span>
 	</div>
 </div>
 
