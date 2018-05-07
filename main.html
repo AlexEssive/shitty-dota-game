@@ -11,7 +11,8 @@
 	<script src="js/JsHttpRequest/JsHttpRequest.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/market.js"></script>
 	<script src="js/players.js"></script>
 </head>
 <body>
@@ -20,7 +21,7 @@
 	
 <div class="header row">
 	<div class="col-2">
-		<img class="logo-img" src="img/team/navi.png" alt="Logo">
+		<img class="team-logo" src="img/team/navi.png" alt="Logo">
 	</div>
 	<div class="col-5">
 		<ul class="list-inline nolist">
@@ -33,11 +34,11 @@
 	</div>
 	<div class="col-2">
 		<h5>Фаны</h5>
-		<img class="img-head" src="img/fans.png" alt="fans"> <span class="span-main">{col_fans}</span>
+		<img class="img-head" src="img/fans.png" alt="fans"> <span class="span-main">228</span>
 	</div>
 	<div class="col-2">
 		<h5>Дни</h5>
-		<img class="img-head" src="img/calendar.png" alt="days"> <span class="span-main">{col_days}</span>
+		<img id="nextDay" class="img-head new-day" src="img/calendar.png" alt="days"> <span class="span-main">322</span>
 	</div>
 	<div class="col-1">
 		<a class="pointer" onclick="showSettings();"><img class="img-head" src="img/settings.png" alt="settings"></a>
@@ -58,23 +59,22 @@
 		</ul>
 </div>
 	
-<div class="content col-10 team">
-	<div class="main_block nolist row">
-	</div>
-</div>
-	
-</div>
-	
-<div class="footer row align-items-center">
-	<div class="offset-2 col-3">
-		Спонсоры: <span class="span-style">+{sponsors_cash}$</span>/мес.
-	</div>
-	<div class="offset-4 col-3 text-center">
-		<img class="img-social" src="img/money-bag.png" alt="cash"><span class="span-style">{cash}$</span>
-	</div>
+<div class="content col-10 main-holder">
+	<div id="gameBlock" class="main_block nolist row"></div>
 </div>
 
 </div>
 	
+<div class="footer row align-items-center">
+	<div class="offset-2 col-3">
+		Спонсоры: <span class="span-style">+0$</span>/мес.
+	</div>
+	<div class="offset-4 col-3 text-center">
+		<img class="img-social" src="img/money-bag.png" alt="cash"><span class="span-style">0$</span>
+	</div>
+</div>
+
+</div>
+
 </body>
 </html>
