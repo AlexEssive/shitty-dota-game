@@ -1,9 +1,12 @@
 function showPlayers() {
     var players = allPlayers;
     refreshGameBlock();
+    var text ="<ul>";
     for (var i=0; i < players.length; i++) {
-        $('#gameBlock').append("<div class='player_card'>" +
+        text += "<li class='player_card'>" +
             players[i].Name +
-            "</div>");
+            "</li>";
     }
+    text += "<ul>";
+    $('#gameBlock').append(text);
 }

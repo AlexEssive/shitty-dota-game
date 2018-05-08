@@ -36,6 +36,7 @@ html, body {
 
 h2, h5 {text-transform: uppercase}
 a {text-decoration: none;}
+ul {list-style-type: none;}
 
 .wrapper {background: #ddd}
 .header {padding-top: 15px; background: #ccc;}
