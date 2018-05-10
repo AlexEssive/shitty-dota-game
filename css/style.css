@@ -52,15 +52,25 @@ ul {list-style-type: none;}
 .team-logo {height: 100px; display: block; margin: 0 auto; padding: 10px;}
 .img-head {width: 45px; }
 
+.matches_list {
+  overflow: auto;
+  height: 400px;
+  width: 20%;
+  text-align: left;
+  margin: 30px 50px;
+  border: 1px solid;
+  padding: 15px;
+}
+
 .team_card {
   width: 18%;
-  height: 350px;
+  min-height: 290px;
   background: skyblue;
   margin-right: 15px;
-  padding: 10px;
+  padding: 7px;
   border-radius: 10px;
   margin-bottom: 20px;
-  border: 3px solid cadetblue;
+  border: 2px solid cadetblue;
   transition: 0.3s;
 }
 
@@ -70,19 +80,16 @@ ul {list-style-type: none;}
 
 .team_card img {
   min-width: 100%;
-  min-height: 100%;
   height: 150px;
   width: 100%;
-  border: 3px solid cadetblue;
+  border: 2px solid cadetblue;
 }
 
 .main_block {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 25px 30px;
   width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 
 .main_block a {
@@ -93,6 +100,7 @@ ul {list-style-type: none;}
   margin: 15px 0px;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  cursor: default;
 }
 
 .main_block li {
@@ -123,7 +131,7 @@ input[type="checkbox"] + label:before {
 }
 
 input[type="checkbox"]:checked + label:before {
-  background: green;
+  background: #34ce57;
   color: #333;
   text-align: center;
 }
@@ -137,4 +145,45 @@ input[type="checkbox"]:focus + label::before {
 }
 
 .new-day{cursor: pointer}
+
+.player_list li{
+    text-align: left;
+    border-bottom: 1px solid white;
+}
+
+.player_list {
+    width: 300px;
+    overflow: auto;
+    height: 290px;
+    background: lightblue;
+    border: 1px solid white;
+}
+
+.player_list label {
+    margin:0;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.button_arrow {
+    height: 65px;
+    width: 65px;
+    cursor: pointer;
+}
+
+.button_arrow:hover {
+    transition: 0.3s;
+    -webkit-filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
+    drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
+}
+
+.next { margin-top: 160px;}
+
+input[type="radio"]:checked + label {
+    background: #01C3F4;
+    color: #fff;
+    width: 100%;
+}
+
+input[type="radio"] {display: none}
 

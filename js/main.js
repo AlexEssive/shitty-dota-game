@@ -9,7 +9,23 @@ var currentDay = 1;
 $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
-    showTeam();
+    showPlayers();
+
+    $('.player_list li').click(function(){
+        showPlayerInfo();
+    });
+
+    $('.prev').click(function(){
+        $(this).parent().parent().find('input:checked').parent().prev().children('input').prop("checked", true);
+        scrollList($(this).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+        showPlayerInfo();
+    });
+
+    $('.next').click(function(){
+        $(this).parent().parent().find('input:checked').parent().next().children('input').prop("checked", true);
+        scrollList($(this).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+        showPlayerInfo();
+    });
 });
 
 function refreshGameBlock()

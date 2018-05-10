@@ -1,12 +1,57 @@
 function showPlayers() {
     var players = allPlayers;
+    var checked = "";
+    var name = "";
     refreshGameBlock();
-    var text ="<ul>";
+    var text ="<div class='col-4'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
-        text += "<li class='player_card'>" +
+        if (i==0) checked  = 'checked'; else checked='';
+        text += "<li>" +
+            "<input id='"+players[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
+            "<label for='"+players[i].Id+"'>" +
             players[i].Name +
+            "</label>" +
             "</li>";
     }
-    text += "<ul>";
+    text += "</ul></div>";
+
+    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png'><br><img class=\"button_arrow next\" src='img/arrow_down.png'></div>";
+
+    $('#gameBlock').append(text);
+
+    showPlayerInfo();
+}
+
+function showPlayerInfo() {
+    var text = "";
+    var name = "";
+    var id = $('input[type=radio][name=player_radio]:checked').attr('id');;
+    var players = allPlayers;
+    text += "<div class='col-6 player_detail'>";
+
+    for (var i=0; i < players.length; i++) {
+        if (i==(id-1)) {
+        text += "<div class='team_card' style='width: 35%'>" +
+        "<img src='img/players/" + players[i].Image + "'><br>" +
+        "<div class='team_info'>" +
+        "<span>Name: " + players[i].Name + "</span><br>" +
+        "<span>Position: " + players[i].Position + "</span><br>" +
+        "<span>Age: " + players[i].Age + "</span><br>" +
+        "<span>About: " + players[i].About + "</span>" +
+        "</div>" +
+        "</div>";
+        }
+    }
+
+    text += "</div>";
+
+    $('.player_detail').remove();
     $('#gameBlock').append(text);
 }
+
+function scrollList(id) {
+    $('#player_list').animate({
+        scrollTop: $("#"+id).offset().bottom-10
+    }, 100);
+}
+

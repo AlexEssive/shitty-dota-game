@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="cp-1251">
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>GAME</title>
 	<link rel="icon" href="img/logo.png">
@@ -14,6 +14,7 @@
 	<script src="js/new_day.js"></script>
 	<script src="js/market.js"></script>
 	<script src="js/players.js"></script>
+	<script src="js/matches.js"></script>
 </head>
 <body>
 	
@@ -52,14 +53,14 @@
 		<ul class="list-inline">
 			<a onClick="showTeam();"><li>Состав</li></a>
 			<a onClick="showPlayers();"><li>Рынок</li></a>
-			<a href=""><li>Рассписание</li></a>
+			<a onClick="showMatches();"><li>Рассписание</li></a>
 			<a href=""><li>Турниры</li></a>
 			<a href=""><li>Таблица лидеров</li></a>
 			<a href=""><li><img src="" alt="Реклама"></li></a>
 		</ul>
 </div>
 	
-<div class="content col-10 main-holder">
+<div class="content col-10 main-holder pad0">
 	<div id="gameBlock" class="main_block nolist row"></div>
 </div>
 
