@@ -42,7 +42,7 @@ function playerAction(player) {
 
 function showMenu(top,left,id) {
     $('.menu').remove();
-    $('#'+id).append("\t<menu class=\"menu\">\n" +
+    $('#'+id).append("\t<menu id='contextMenu' class=\"menu\">\n" +
         "\t\t<li class=\"menu-item\">\n" +
         "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
         "\t\t\t\t<i class=\"fa fa-folder-open\"></i>\n" +
