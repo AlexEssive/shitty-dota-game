@@ -64,7 +64,7 @@ function appendProgressBars(player, number) {
             "<span>" + k +"</span>" +
              "  <div class=\"progress\">\n" +
             "    <div class=\"progress-bar" + " " + classToColor + "\" style=\"width:" + stat +"%\"></div>\n" +
-             + stat +
+             + stat + // dzy tut krivi procenti
             "  </div>"
         );
 
