@@ -3,7 +3,7 @@ function showPlayers() {
     var checked = "";
     var name = "";
     refreshGameBlock();
-    var text ="<div class='col-4'><ul id='player_list' class='player_list'>";
+    var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
         if (i==0) checked  = 'checked'; else checked='';
         text += "<li>" +
@@ -15,7 +15,7 @@ function showPlayers() {
     }
     text += "</ul></div>";
 
-    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png'><br><img class=\"button_arrow next\" src='img/arrow_down.png'></div>";
+    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br><img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
 
     $('#gameBlock').append(text);
 
@@ -50,8 +50,20 @@ function showPlayerInfo() {
 }
 
 function scrollList(id) {
-    $('#player_list').animate({
-        scrollTop: $("#"+id).offset().bottom-10
-    }, 100);
+    // $('#player_list').animate({
+    //     scrollTop: $("#"+id).offset().bottom-10
+    // }, 100);
 }
 
+
+function moveTop(cl) {
+        $(cl).parent().parent().find('input:checked').parent().prev().children('input').prop("checked", true);
+        scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+        showPlayerInfo();
+}
+
+function moveBot(cl) {
+        $(cl).parent().parent().find('input:checked').parent().next().children('input').prop("checked", true);
+        scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+        showPlayerInfo();
+}
