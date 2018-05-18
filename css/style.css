@@ -8,7 +8,7 @@ html, body {
   padding: 0;
   box-sizing: border-box;
 }
-.main {height:700px;}
+.main {height:100%;}
 .bold {font-weight:bold;}
 .text-center {text-align: center;}
 .text-right {text-align: right;}
@@ -17,6 +17,8 @@ html, body {
 .float-right {float: right;}
 .none {display: none;}
 .pad0 {padding: 0;}
+.padr {padding-right: 0}
+.padl {padding-left: 0}
 .pad15 {padding-right: 15px;}
 .padl15 {padding-left: 15px;}
 .pad10 {padding: 10px 0px;}
@@ -66,11 +68,12 @@ ul {list-style-type: none;}
   width: 18%;
   background: skyblue;
   margin-right: 15px;
-  padding: 7px;
+  padding: 1%;
   border-radius: 10px;
   margin-bottom: 20px;
   border: 2px solid cadetblue;
   transition: 0.3s;
+  height: 100%;
 }
 
 .team_card:hover {
@@ -82,6 +85,7 @@ ul {list-style-type: none;}
   height: 50%;
   width: 100%;
   border: 2px solid cadetblue;
+    height: 30vh;
 }
 
 .progress {
@@ -93,6 +97,7 @@ ul {list-style-type: none;}
   margin: 0;
   padding: 25px 30px;
   width: 100%;
+    font-size: 1vw;
 }
 
 .main_block a {
@@ -100,10 +105,12 @@ ul {list-style-type: none;}
 }
 
 .team_info {
-  margin: 15px 0px;
+  margin: 10px 0px 40px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   cursor: default;
+    height: 12vh;
+
 }
 
 .main_block li {

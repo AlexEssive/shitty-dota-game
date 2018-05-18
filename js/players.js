@@ -41,6 +41,7 @@ function showTeam() {
 }
 
 function appendProgressBars(player, number) {
+    $('#card' + number).append("<div class='team_stats'>");
     for (var k in stats) {
         var stat = player[stats[k]];
         var classToColor;
@@ -60,16 +61,16 @@ function appendProgressBars(player, number) {
         console.log(stat);
         console.log(classToColor);
 
-        $('#card' + number).append(
-            "<span>" + k +"</span>" +
-             "  <div class=\"progress\">\n" +
-            "    <div class=\"progress-bar" + " " + classToColor + "\" style=\"width:" + stat +"%\"></div>\n" +
-             + stat + // dzy tut krivi procenti
-            "  </div>"
+        $('#card' + number + " .team_stats").append( "<div class='row'><div class='col-8'>" +
+                "<span>" + k +"</span>" +
+                "<div class=\"progress\">\n" +
+                "<div class=\"progress-bar" + " " + classToColor + "\" style=\"width:" + stat +"%\"></div>\n" +
+                "</div></div>" +
+                "<div class='col-4 padl'><br><span>" + stat + "/100</span></div>" +
+            "</div>"
         );
-
-
     }
+    $('#card' + number).append("</div>");
 }
 
 function playerAction(player) {
