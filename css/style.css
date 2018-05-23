@@ -88,6 +88,33 @@ ul {list-style-type: none;}
     height: 30vh;
 }
 
+.team_action {
+    width: 100%;
+}
+
+.team_action span {
+    color: green;
+}
+
+.team_action .col-4 {
+    padding: 0;
+    padding-right: 5%;
+}
+
+.team_action button {
+    width: 100%;
+    background: darkgray;
+    border: 5px solid gray;
+    min-height: 65px;
+    color: white;
+    font-size: 1vw;
+}
+
+.team_action button:hover {
+    background: darkseagreen;
+    cursor: pointer;
+}
+
 .progress {
     margin-bottom: 10px;
 }

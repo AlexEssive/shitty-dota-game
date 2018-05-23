@@ -14,9 +14,8 @@ function showPlayers() {
             "</li>";
     }
     text += "</ul></div>";
-
-    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br><img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
-
+    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
+        "<img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
     $('#gameBlock').append(text);
 
     showPlayerInfo();
@@ -54,7 +53,6 @@ function scrollList(id) {
     //     scrollTop: $("#"+id).offset().bottom-10
     // }, 100);
 }
-
 
 function moveTop(cl) {
         $(cl).parent().parent().find('input:checked').parent().prev().children('input').prop("checked", true);
