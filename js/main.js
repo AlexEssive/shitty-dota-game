@@ -9,7 +9,7 @@ var currentDay = 1;
 $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
-    showTeam();
+    showLoginForm();
 
     setInterval(function(){
         $('#string>span').addClass('blink_on');

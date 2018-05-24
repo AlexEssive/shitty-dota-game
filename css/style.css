@@ -54,6 +54,10 @@ ul {list-style-type: none;}
 .team-logo {height: 100px; display: block; margin: 0 auto; padding: 10px;}
 .img-head {width: 45px; }
 
+.pos_span {
+    color: #ffffff;
+}
+
 .matches_list {
   overflow: auto;
   height: 400px;
@@ -64,16 +68,21 @@ ul {list-style-type: none;}
   padding: 15px;
 }
 
+.team_cards {
+    display: inline-flex;
+}
+
+
 .team_card {
   width: 18%;
-  background: skyblue;
-  margin-right: 15px;
+  background: #576ab3;
+  margin-right: 1%;
   padding: 1%;
   border-radius: 10px;
   margin-bottom: 20px;
-  border: 2px solid cadetblue;
+  border: 2px solid #292929;
   transition: 0.3s;
-  height: 100%;
+  height: auto;
 }
 
 .team_card:hover {
@@ -81,11 +90,12 @@ ul {list-style-type: none;}
 }
 
 .team_card img {
-  min-width: 100%;
-  height: 50%;
-  width: 100%;
-  border: 2px solid cadetblue;
-    height: 30vh;
+    background: white;
+    min-width: 100%;
+    height: 50%;
+    width: 100%;
+    border: 2px ridge #292929;
+    height: 18vh;
 }
 
 .team_action {
@@ -105,7 +115,7 @@ ul {list-style-type: none;}
     width: 100%;
     background: darkgray;
     border: 5px solid gray;
-    min-height: 65px;
+    min-height: 55px;
     color: white;
     font-size: 1vw;
 }
@@ -113,6 +123,22 @@ ul {list-style-type: none;}
 .team_action button:hover {
     background: darkseagreen;
     cursor: pointer;
+}
+
+.player_stats {
+    margin-top: 10%;
+    font-size: 0.7vw;
+}
+
+.team_stats {
+    width: 100%;
+    margin-top: 2%;
+    font-size: 0.7vw;
+}
+
+.team_stats .col-4 {
+    padding: 0;
+    padding-right: 5%;
 }
 
 .progress {
@@ -132,12 +158,10 @@ ul {list-style-type: none;}
 }
 
 .team_info {
-  margin: 10px 0px 40px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  cursor: default;
-    height: 12vh;
-
+    font-size: 0.7vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    cursor: default;
 }
 
 .main_block li {
@@ -145,6 +169,23 @@ ul {list-style-type: none;}
   background: transparent;
   margin: 0;
   padding: 0;
+}
+
+.team_kick a{
+    background: transparent;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: red;
+    font-size: 3vw;
+    padding: 0%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 24px;
+    text-decoration: none;
+}
+
+.team_kick a:hover{
+    color: darkred;
 }
 
 input[type="checkbox"] { visibility: hidden; }
@@ -337,4 +378,29 @@ input[type="radio"] {display: none}
 .menu-item:hover > .menu {
     -webkit-transition-delay: 100ms;
     transition-delay: 300ms;
+}
+
+.login_top, login_main {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.login_top button {
+    width: 100%;
+    background: #18AEC7;
+    color: white;
+    border-radius: 25px;
+    border: 2px solid white;
+    height: 40px;
+    font-size: 20px;
+}
+
+.login_top button:hover {
+    cursor: pointer;
+    background: #01C3F4;
+}
+
+.login_form {
+    background: white;
+    border: 2px solid #01C3F4;
 }

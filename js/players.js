@@ -19,9 +19,17 @@ var allPlayers = [
 var urTeam = [{'Id':'15'},{'Id':'2'},{'Id':'13'},{'Id':'14'},{'Id':'5'}];
 
 var stats = new Array();
- stats['Скилл'] = 'Skill';
- stats['Социальность'] = 'Social';
- stats['Медийность'] = 'Media';
+    stats['Скилл'] = 'Skill';
+    stats['Социальность'] = 'Social';
+    stats['Медийность'] = 'Media';
+
+
+var teamStats = new Array();
+    teamStats['Teamplay'] = '10';
+    teamStats['Strategy'] = '50';
+    teamStats['Atmosphere'] = '90';
+
+
 
 function showTeam() {
     var player = allPlayers;
@@ -29,45 +37,88 @@ function showTeam() {
     var text = "";
     refreshGameBlock();
 
+    //top buttons
     text+="<div class='row team_action' style='margin-bottom: 2%'>" +
         "<div class='col-4'><button>piar <span>500$</span></button></div>" +
         "<div class='col-4'><button>white post <span>500$</span></button></div>" +
         "</div>";
 
-    text+="<div class='row'>";
-
+    text+="<div class='row team'>";
+    text+="<div class='col-11 pad0 team_cards'>"
     for (var i=0; i < player.length; i++) {
         for (var j=0; j < team.length; j++) {
             if (team[j].Id==player[i].Id) {
             var n = i + 1;
             text+="<div id='card" + n + "' class='team_card' onclick='playerAction(this);'>" +
                 "<div id='status" + n + "'><span>Status</span></div>" +
-                "<img src='img/players/" + player[i].Image + "'><br>" +
-                "<div class='team_info'>" +
+                "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
+                "<div class='col-6 team_info'>" +
+                "<span class='pos_span'>Position:" + player[i].Position + "</span><br>" +
                 "<span>Name: " + player[i].Name + "</span><br>" +
-                "<span>Position: " + player[i].Position + "</span><br>" +
                 "<span>Age: " + player[i].Age + "</span><br>" +
                 "<span>About: " + player[i].About + "</span>" +
-                "</div>" +
+                "</div></div>" +
                 appendProgressBars(player[i], i + 1) +
                 "</div>";
-
             }
         }
     }
+    text+="</div><div class='col-1 team_kick'><a class='' href=''>kick</a></div>";
+    text+="</div>";
 
-    text+="</div><div class='row team_action' style='margin-top: 2%'>" +
+    //bottom buttons
+    text+="<div class='row team_action' style='margin-top: 2%'>" +
         "<div class='col-4'><button>bootcamp <span>500$</span></button></div>" +
         "<div class='col-4'><button>photoset <span>500$</span></button></div>" +
         "<div class='col-4'><button>change role <span>500$</span></button></div>" +
         "</div>";
 
+    //bottom team stats
+    text+=appendTeamBars();
+
     $('#gameBlock').append(text);
+}
+
+function appendTeamBars(team) {
+    var text = "";
+    text+="<div class='row team_stats'>";
+
+    for (var k in teamStats) {
+
+        var stat = teamStats[k];
+
+        console.log("k="+k+" t[k]="+teamStats[k]);
+
+        var classToColor;
+
+        if (stat < 25) {
+            classToColor = 'bg-danger';
+        }
+        else if ((stat <= 75) && (stat >= 25)) {
+            classToColor = 'bg-warning';
+        }
+        else if ((stat <= 100) && (stat > 75)) {
+            classToColor = 'bg-success';
+        } else {
+            classToColor = 'bg-dark';
+        }
+
+        text+="<div class='col-4'><div class='row'><div class='col-8'>" +
+            "<span>" + k +"</span>" +
+            "<div class=\"progress\">\n" +
+            "<div class=\"progress-bar" + " " + classToColor + "\" style=\"width:" + stat +"%\"></div>\n" +
+            "</div></div>" +
+            "<div class='col-4 padl'><br><span>" + stat + "/100</span></div>" +
+            "</div></div>";
+    }
+    text+="</div>";
+
+    return text;
 }
 
 function appendProgressBars(player, number) {
     var text = "";
-    text+="<div class='team_stats'>";
+    text+="<div class='player_stats'>";
 
     for (var k in stats) {
         var stat = player[stats[k]];
