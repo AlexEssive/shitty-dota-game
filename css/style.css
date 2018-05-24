@@ -102,8 +102,13 @@ ul {list-style-type: none;}
     width: 100%;
 }
 
+.team_action i {
+    float: left;
+}
+
 .team_action span {
     color: green;
+    float: right;
 }
 
 .team_action .col-4 {
@@ -118,6 +123,7 @@ ul {list-style-type: none;}
     min-height: 55px;
     color: white;
     font-size: 1vw;
+    padding: 0% 5%;
 }
 
 .team_action button:hover {
@@ -380,7 +386,7 @@ input[type="radio"] {display: none}
     transition-delay: 300ms;
 }
 
-.login_top, login_main {
+.login_top, .login_main {
     width: 100%;
     margin-bottom: 2%;
 }
@@ -401,6 +407,59 @@ input[type="radio"] {display: none}
 }
 
 .login_form {
-    background: white;
-    border: 2px solid #01C3F4;
+    background: #f4f4f2;
+    border: 3px solid #01C3F4;
+    border-radius: 5px;
+    padding: 0% 2%;
+}
+
+.login_form img {
+    width: 3vw;
+    height: 3vw;
+}
+
+.login_form img:hover {
+    transition: 0.3s;
+    -webkit-filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
+drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
+}
+
+.login_form a {
+    background: transparent;
+}
+
+.login_form input {
+    background: #e2e5f3;
+    border: 1px solid black;
+}
+
+.login_form input:hover, .login_form input:active {
+    background: #f2f5fe;
+}
+
+.login_form li {
+    margin-bottom: 5%;
+}
+
+.custom-file {
+    width: 5vw;
+}
+
+.custom-file input {
+    width: auto;
+}
+
+.custom-file span {
+    color:white;
+    background: darkgray;
+    padding: 5px;
+}
+
+.custom-file span:hover {
+    background: lightgray;
+}
+
+.logo_team {
+    width: 7vw;
+    height: 7vw;
 }

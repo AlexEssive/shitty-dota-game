@@ -39,8 +39,8 @@ function showTeam() {
 
     //top buttons
     text+="<div class='row team_action' style='margin-bottom: 2%'>" +
-        "<div class='col-4'><button>piar <span>500$</span></button></div>" +
-        "<div class='col-4'><button>white post <span>500$</span></button></div>" +
+        "<div class='col-4'><button><i>Пиар</i> <span>500$</span></button></div>" +
+        "<div class='col-4'><button><i>Написать пост</i> <span>500$</span></button></div>" +
         "</div>";
 
     text+="<div class='row team'>";
@@ -53,7 +53,7 @@ function showTeam() {
                 "<div id='status" + n + "'><span>Status</span></div>" +
                 "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
                 "<div class='col-6 team_info'>" +
-                "<span class='pos_span'>Position:" + player[i].Position + "</span><br>" +
+                "<span class='pos_span'>" + player[i].Position + "</span><br>" +
                 "<span>Name: " + player[i].Name + "</span><br>" +
                 "<span>Age: " + player[i].Age + "</span><br>" +
                 "<span>About: " + player[i].About + "</span>" +
@@ -68,9 +68,9 @@ function showTeam() {
 
     //bottom buttons
     text+="<div class='row team_action' style='margin-top: 2%'>" +
-        "<div class='col-4'><button>bootcamp <span>500$</span></button></div>" +
-        "<div class='col-4'><button>photoset <span>500$</span></button></div>" +
-        "<div class='col-4'><button>change role <span>500$</span></button></div>" +
+        "<div class='col-4'><button><i>Буткемп</i> <span>500$</span></button></div>" +
+        "<div class='col-4'><button><i>Фотосет</i> <span>500$</span></button></div>" +
+        "<div class='col-4'><button><i>Поменять роль</i> <span>500$</span></button></div>" +
         "</div>";
 
     //bottom team stats
