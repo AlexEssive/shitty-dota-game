@@ -1,6 +1,7 @@
 function showLoginForm() {
     refreshGameBlock();
     var text="";
+
     text+="<div class='container'>";
     text+="<div class='row login_top'><div class='offset-3 col-6 pad0'><button>Создайте команду</button></div></div>";
     text+="<div class='row login_main'><div class='offset-3 col-6 login_form pad0'>" +
@@ -17,11 +18,14 @@ function showLoginForm() {
         "</ul>" +
     "</div></div>";
     text+="</div>";
+
     // $("body").append(text);
     $('#gameBlock').append(text);
 }
 
 function newUser() {
+    // $("body").load("main.html");
+
     userName =  $("#user-name").val();
     teamName =  $("#team-cap").val();
     teamLogo =  $("#output").attr('src');
@@ -35,16 +39,8 @@ function newUser() {
     setCookie("teamName",teamName);
     setCookie("teamLogo",teamLogo);
 
-    // document.cookie = "userName="+userName;
-    // document.cookie = "teamName="+teamName;
-    // document.cookie = "teamLogo="+teamLogo;
-
     $("#team-logo").attr('src',teamLogo);
     $("#team-name").text(teamName);
-
-    // $("body").load("main.html");
-    // $("body").append('<object type="text/html" data="/main.html" ></object>');
-    // document.getElementsByTagName("body").innerHTML='<object type="text/html" data="/main.html" ></object>';
 
     showTeam();
 }

@@ -1,17 +1,12 @@
 var income = 100;
-var cash = 1000;
-
+var cash = 111000;
 var fans = 228;
 var fansIncome = 1;
-
 var currentDay = 1;
 
 $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
-
-    // document.body.innerHTML = '';
-
     showLoginForm();
 
     setInterval(function(){

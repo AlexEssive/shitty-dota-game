@@ -7,13 +7,16 @@ var allMatches = [
 ];
 
 var allTeam = [
-    {'Id':'1', 'Name':'NaVi', 'Country':'Ukraine', 'Logo':'navi.png'},
-    {'Id':'2', 'Name':'VP', 'Country':'Russia', 'Logo':'vp.png'},
-    {'Id':'3', 'Name':'EG', 'Country':'USA', 'Logo':'eg.png'},
-    {'Id':'4', 'Name':'OG', 'Country':'USA', 'Logo':'og.png'},
-    {'Id':'5', 'Name':'Vega', 'Country':'Russia', 'Logo':'vega.png'},
-    {'Id':'6', 'Name':'Empire', 'Country':'Russia', 'Logo':'empire.png'},
-    {'Id':'7', 'Name':'Liquid', 'Country':'USA', 'Logo':'liquid.png'}
+    {'Id':'1', 'Name':'Na`Vi', 'Country':'Ukraine', 'Logo':'navi.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'2', 'Name':'VP', 'Country':'Russia', 'Logo':'vp.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'3', 'Name':'EG', 'Country':'USA', 'Logo':'eg.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'4', 'Name':'OG', 'Country':'USA', 'Logo':'og.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'5', 'Name':'Vega', 'Country':'Russia', 'Logo':'vega.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'6', 'Name':'Empire', 'Country':'Russia', 'Logo':'empire.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'7', 'Name':'Liquid', 'Country':'USA', 'Logo':'liquid.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'8', 'Name':'LGD', 'Country':'China', 'Logo':'lgd.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'9', 'Name':'VG', 'Country':'China', 'Logo':'vg.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
+    {'Id':'10', 'Name':'NewBee', 'Country':'China', 'Logo':'newbee.png', 'Skill':'100', 'Social':'100', 'Media':'100'}
 ];
 
 function showMatches() {
@@ -21,7 +24,6 @@ function showMatches() {
     refreshGameBlock();
 
     var list="<div class='matches_list'>";
-
     for (var i=0; i < matches.length; i++) {
         list+="<span class='bold'>"+matches[i].Date + ": </span><br>";
         for (var j = 0; j < matches.length; j++) {
@@ -30,7 +32,6 @@ function showMatches() {
         }
         list+="<br>";
     }
-
     list+="</div>";
 
     $('#gameBlock').append(list);

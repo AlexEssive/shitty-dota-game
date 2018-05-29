@@ -2,11 +2,11 @@ var userName = "Volodya";
 
 var teamName = "NAVI";
 
-var teamLogo = "img/team/navi.png";
+var teamLogo = "img/teams/navi.png";
 
 var urTeam = [{'Id':'15'},{'Id':'2'},{'Id':'13'},{'Id':'14'},{'Id':'5'}];
 
-var teamStats = new Array();
+var teamStats = Array();
 teamStats['Teamplay'] = '10';
 teamStats['Strategy'] = '50';
 teamStats['Atmosphere'] = '90';
@@ -24,10 +24,10 @@ function showTeam() {
         "</div>";
 
     text+="<div class='row team'>";
-    text+="<div class='col-11 pad0 team_cards'>"
+    text+="<div class='col-11 pad0 team_cards'>";
     for (var i=0; i < player.length; i++) {
         for (var j=0; j < team.length; j++) {
-            if (team[j].Id==player[i].Id) {
+            if (team[j].Id===player[i].Id) {
                 var n = i + 1;
                 text+="<div id='card" + n + "' class='team_card' onclick='playerAction(this);'>" +
                     "<div id='status" + n + "'><span>Status</span></div>" +
@@ -47,7 +47,7 @@ function showTeam() {
     text+="</div>";
 
     //bottom buttons
-    text+="<div class='row team_action' style='margin-top: 2%'>" +
+    text+="<div class='row team_action'>" +
         "<div class='col-4'><button><i>Буткемп</i> <span>500$</span></button></div>" +
         "<div class='col-4'><button><i>Фотосет</i> <span>500$</span></button></div>" +
         "<div class='col-4'><button><i>Поменять роль</i> <span>500$</span></button></div>" +
@@ -64,11 +64,7 @@ function appendTeamBars(team) {
     text+="<div class='row team_stats'>";
 
     for (var k in teamStats) {
-
         var stat = teamStats[k];
-
-        console.log("k="+k+" t[k]="+teamStats[k]);
-
         var classToColor;
 
         if (stat < 25) {
@@ -82,7 +78,6 @@ function appendTeamBars(team) {
         } else {
             classToColor = 'bg-dark';
         }
-
         text+="<div class='col-4'><div class='row'><div class='col-8'>" +
             "<span>" + k +"</span>" +
             "<div class=\"progress\">\n" +
@@ -115,7 +110,6 @@ function appendProgressBars(player, number) {
         } else {
             classToColor = 'bg-dark';
         }
-
         text+="<div class='row'><div class='col-8'>" +
             "<span>" + k +"</span>" +
             "<div class=\"progress\">\n" +
@@ -137,6 +131,7 @@ function playerAction(player) {
 
 function showMenu(top,left,id) {
     $('.menu').remove();
+
     $('#'+id).append("\t<menu id='contextMenu' class=\"menu\">\n" +
         "\t\t<li class=\"menu-item\">\n" +
         "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
@@ -175,7 +170,7 @@ function showMenu(top,left,id) {
         "\t\t\t</button>\n" +
         "\t\t</li>\n" +
         "\t</menu>");
-    console.log(id);
+
     $(".menu").css({top: 40,  position:'absolute'});
     $(".menu").show();
 }

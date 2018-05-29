@@ -32,6 +32,7 @@ html, body {
 .pointer {cursor: pointer;}
 .word-wrap {word-wrap: break-word; overflow-wrap: break-word;}
 .only-read {color: #ddd;}
+.list li {text-align: left;}
 .nolist {list-style: none; display: inline-flex;}
 .nolist li { padding-top: 10px; margin-right: 20px; text-align: center;}
 .span-red {font-weight:bold; color:red;}
@@ -100,6 +101,7 @@ ul {list-style-type: none;}
 
 .team_action {
     width: 100%;
+    margin-top: 2%
 }
 
 .team_action i {
@@ -130,6 +132,8 @@ ul {list-style-type: none;}
     background: darkseagreen;
     cursor: pointer;
 }
+
+.team_action li {text-align: left;}
 
 .player_stats {
     margin-top: 10%;
