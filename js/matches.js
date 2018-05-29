@@ -25,7 +25,7 @@ function showMatches() {
     for (var i=0; i < matches.length; i++) {
         list+="<span class='bold'>"+matches[i].Date + ": </span><br>";
         for (var j = 0; j < matches.length; j++) {
-            if (matches[i].Date==matches[j].Date)
+            if (matches[i].Date===matches[j].Date)
                 list+=getTeamName(matches[j].Team)+", "+matches[j].Type+"<br>";
         }
         list+="<br>";
@@ -39,7 +39,7 @@ function showMatches() {
 function getTeamName(id) {
     var team = allTeam;
     for (var i=0; i < team.length; i++) {
-        if (i==id) var name = team[i].Name;
+        if (i===id) var name = team[i].Name;
     }
     return name;
 }

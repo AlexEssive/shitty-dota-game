@@ -16,193 +16,75 @@ var allPlayers = [
     {'Id':'15','Name':'Sumail','Position':'3', 'Age':'11', 'About': 'Малой', 'Image':'sumail.png', 'Skill':'90', 'Social':'35', 'Media':'90'}
 ];
 
-var urTeam = [{'Id':'15'},{'Id':'2'},{'Id':'13'},{'Id':'14'},{'Id':'5'}];
-
 var stats = new Array();
-    stats['Скилл'] = 'Skill';
-    stats['Социальность'] = 'Social';
-    stats['Медийность'] = 'Media';
+stats['Скилл'] = 'Skill';
+stats['Социальность'] = 'Social';
+stats['Медийность'] = 'Media';
 
-
-var teamStats = new Array();
-    teamStats['Teamplay'] = '10';
-    teamStats['Strategy'] = '50';
-    teamStats['Atmosphere'] = '90';
-
-
-
-function showTeam() {
-    var player = allPlayers;
-    var team = urTeam;
-    var text = "";
+function showPlayers() {
+    var players = allPlayers;
+    var checked = "";
+    var name = "";
     refreshGameBlock();
+    var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
+    for (var i=0; i < players.length; i++) {
+        if (i==0) checked  = 'checked'; else checked='';
+        text += "<li>" +
+            "<input id='"+players[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
+            "<label for='"+players[i].Id+"'>" +
+            players[i].Name +
+            "</label>" +
+            "</li>";
+    }
+    text += "</ul></div>";
+    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
+        "<img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
+    $('#gameBlock').append(text);
 
-    //top buttons
-    text+="<div class='row team_action' style='margin-bottom: 2%'>" +
-        "<div class='col-4'><button><i>Пиар</i> <span>500$</span></button></div>" +
-        "<div class='col-4'><button><i>Написать пост</i> <span>500$</span></button></div>" +
-        "</div>";
+    showPlayerInfo();
+}
 
-    text+="<div class='row team'>";
-    text+="<div class='col-11 pad0 team_cards'>"
-    for (var i=0; i < player.length; i++) {
-        for (var j=0; j < team.length; j++) {
-            if (team[j].Id==player[i].Id) {
-            var n = i + 1;
-            text+="<div id='card" + n + "' class='team_card' onclick='playerAction(this);'>" +
-                "<div id='status" + n + "'><span>Status</span></div>" +
-                "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
-                "<div class='col-6 team_info'>" +
-                "<span class='pos_span'>" + player[i].Position + "</span><br>" +
-                "<span>Name: " + player[i].Name + "</span><br>" +
-                "<span>Age: " + player[i].Age + "</span><br>" +
-                "<span>About: " + player[i].About + "</span>" +
-                "</div></div>" +
-                appendProgressBars(player[i], i + 1) +
+function showPlayerInfo() {
+    var text = "";
+    var name = "";
+    var id = $('input[type=radio][name=player_radio]:checked').attr('id');;
+    var players = allPlayers;
+    text += "<div class='col-6 player_detail'>";
+
+    for (var i=0; i < players.length; i++) {
+        if (i==(id-1)) {
+            text += "<div class='team_card' style='width: 35%'>" +
+                "<img src='img/players/" + players[i].Image + "'><br>" +
+                "<div class='team_info'>" +
+                "<span>Name: " + players[i].Name + "</span><br>" +
+                "<span>Position: " + players[i].Position + "</span><br>" +
+                "<span>Age: " + players[i].Age + "</span><br>" +
+                "<span>About: " + players[i].About + "</span>" +
+                "</div>" +
                 "</div>";
-            }
         }
     }
-    text+="</div><div class='col-1 team_kick'><a class='' href=''>kick</a></div>";
-    text+="</div>";
 
-    //bottom buttons
-    text+="<div class='row team_action' style='margin-top: 2%'>" +
-        "<div class='col-4'><button><i>Буткемп</i> <span>500$</span></button></div>" +
-        "<div class='col-4'><button><i>Фотосет</i> <span>500$</span></button></div>" +
-        "<div class='col-4'><button><i>Поменять роль</i> <span>500$</span></button></div>" +
-        "</div>";
+    text += "</div>";
 
-    //bottom team stats
-    text+=appendTeamBars();
-
+    $('.player_detail').remove();
     $('#gameBlock').append(text);
 }
 
-function appendTeamBars(team) {
-    var text = "";
-    text+="<div class='row team_stats'>";
-
-    for (var k in teamStats) {
-
-        var stat = teamStats[k];
-
-        console.log("k="+k+" t[k]="+teamStats[k]);
-
-        var classToColor;
-
-        if (stat < 25) {
-            classToColor = 'bg-danger';
-        }
-        else if ((stat <= 75) && (stat >= 25)) {
-            classToColor = 'bg-warning';
-        }
-        else if ((stat <= 100) && (stat > 75)) {
-            classToColor = 'bg-success';
-        } else {
-            classToColor = 'bg-dark';
-        }
-
-        text+="<div class='col-4'><div class='row'><div class='col-8'>" +
-            "<span>" + k +"</span>" +
-            "<div class=\"progress\">\n" +
-            "<div class=\"progress-bar" + " " + classToColor + "\" style=\"width:" + stat +"%\"></div>\n" +
-            "</div></div>" +
-            "<div class='col-4 padl'><br><span>" + stat + "/100</span></div>" +
-            "</div></div>";
-    }
-    text+="</div>";
-
-    return text;
+function scrollList(id) {
+    // $('#player_list').animate({
+    //     scrollTop: $("#"+id).offset().bottom-10
+    // }, 100);
 }
 
-function appendProgressBars(player, number) {
-    var text = "";
-    text+="<div class='player_stats'>";
-
-    for (var k in stats) {
-        var stat = player[stats[k]];
-        var classToColor;
-
-            if (stat < 25) {
-                classToColor = 'bg-danger';
-            }
-            else if ((stat <= 75) && (stat >= 25)) {
-                classToColor = 'bg-warning';
-            }
-            else if ((stat <= 100) && (stat > 75)) {
-                classToColor = 'bg-success';
-            } else {
-                classToColor = 'bg-dark';
-            }
-
-        text+="<div class='row'><div class='col-8'>" +
-                "<span>" + k +"</span>" +
-                "<div class=\"progress\">\n" +
-                "<div class=\"progress-bar" + " " + classToColor + "\" style=\"width:" + stat +"%\"></div>\n" +
-                "</div></div>" +
-                "<div class='col-4 padl'><br><span>" + stat + "/100</span></div>" +
-            "</div>";
-    }
-    text+="</div>";
-
-    return text;
+function moveTop(cl) {
+    $(cl).parent().parent().find('input:checked').parent().prev().children('input').prop("checked", true);
+    scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+    showPlayerInfo();
 }
 
-function playerAction(player) {
-    var rect = player.getBoundingClientRect();
-    var id = player.id;
-    showMenu(rect.top,rect.left,id);
+function moveBot(cl) {
+    $(cl).parent().parent().find('input:checked').parent().next().children('input').prop("checked", true);
+    scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+    showPlayerInfo();
 }
-
-function showMenu(top,left,id) {
-    $('.menu').remove();
-    $('#'+id).append("\t<menu id='contextMenu' class=\"menu\">\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-folder-open\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Отдыхать</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<!--<li class=\"menu-item disabled\">-->\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<span class=\"menu-text\">Анализ реплеев</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-reply\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Разработка стратегий</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-download\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Тренироваться</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-edit\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Стримить</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-trash\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Психолог</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t</menu>");
-    console.log(id);
-    $(".menu").css({top: 40,  position:'absolute'});
-    $(".menu").show();
-}
-
-function changeStatus(id) {
-    $('#status'+id).find("span").remove();
-    $('#status'+id).append("<span>Work</span>");
-}
-
-

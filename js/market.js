@@ -5,7 +5,7 @@ function showPlayers() {
     refreshGameBlock();
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
-        if (i==0) checked  = 'checked'; else checked='';
+        if (i===0) checked  = 'checked'; else checked='';
         text += "<li>" +
             "<input id='"+players[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
             "<label for='"+players[i].Id+"'>" +
@@ -29,7 +29,7 @@ function showPlayerInfo() {
     text += "<div class='col-6 player_detail'>";
 
     for (var i=0; i < players.length; i++) {
-        if (i==(id-1)) {
+        if (i===(id-1)) {
         text += "<div class='team_card' style='width: 35%'>" +
         "<img src='img/players/" + players[i].Image + "'><br>" +
         "<div class='team_info'>" +

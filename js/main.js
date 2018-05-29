@@ -9,6 +9,9 @@ var currentDay = 1;
 $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
+
+    // document.body.innerHTML = '';
+
     showLoginForm();
 
     setInterval(function(){

@@ -8,23 +8,27 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins/jquery-3.3.1.min.js"></script>
+	<script src="js/plugins/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/new_day.js"></script>
-	<script src="js/market.js"></script>
 	<script src="js/players.js"></script>
+	<script src="js/days.js"></script>
+	<script src="js/market.js"></script>
+	<script src="js/team.js"></script>
 	<script src="js/matches.js"></script>
 	<script src="js/context.js"></script>
-	<script src="js/login.js"></script>
+	<script src="js/user.js"></script>
+	<script src="js/upload.js"></script>
+	<script src="js/cookies.js"></script>
 </head>
 <body>
 	
 <div class="wrapper container-fluid">
 	
 <div class="header row">
-	<div class="col-2">
-		<img class="team-logo" src="img/team/navi.png" alt="Logo">
+	<div class="col-2" style="display:inline-flex;">
+		<img id="team-logo" class="team-logo" src="img/team/navi.png" alt="Logo"><br>
+		<span id="team-name" class="team-name">NAVI</span>
 	</div>
 	<div class="col-5">
 		<ul class="list-inline nolist">
@@ -58,7 +62,7 @@
 			<a onClick="showMatches();"><li>Рассписание</li></a>
 			<a href=""><li>Турниры</li></a>
 			<a href=""><li>Таблица лидеров</li></a>
-			<a onClick="showLoginForm();"><li>Аккаунт</li></a>
+			<a onClick="showProfile();"><li>Аккаунт</li></a>
 		</ul>
 </div>
 	
