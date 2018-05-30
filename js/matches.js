@@ -7,16 +7,16 @@ var allMatches = [
 ];
 
 var allTeam = [
-    {'Id':'1', 'Name':'Na`Vi', 'Country':'Ukraine', 'Logo':'navi.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'2', 'Name':'VP', 'Country':'Russia', 'Logo':'vp.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'3', 'Name':'EG', 'Country':'USA', 'Logo':'eg.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'4', 'Name':'OG', 'Country':'USA', 'Logo':'og.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'5', 'Name':'Vega', 'Country':'Russia', 'Logo':'vega.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'6', 'Name':'Empire', 'Country':'Russia', 'Logo':'empire.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'7', 'Name':'Liquid', 'Country':'USA', 'Logo':'liquid.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'8', 'Name':'LGD', 'Country':'China', 'Logo':'lgd.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'9', 'Name':'VG', 'Country':'China', 'Logo':'vg.png', 'Skill':'100', 'Social':'100', 'Media':'100'},
-    {'Id':'10', 'Name':'NewBee', 'Country':'China', 'Logo':'newbee.png', 'Skill':'100', 'Social':'100', 'Media':'100'}
+    {'Id':'1', 'Name':'Na`Vi', 'Country':'Ukraine', 'Logo':'navi.png', 'Teamplay':'10', 'Strategy':'10', 'Atmosphere':'10'},
+    {'Id':'2', 'Name':'VP', 'Country':'Russia', 'Logo':'vp.png', 'Teamplay':'100', 'Strategy':'100', 'Atmosphere':'100'},
+    {'Id':'3', 'Name':'EG', 'Country':'USA', 'Logo':'eg.png', 'Teamplay':'30', 'Strategy':'100', 'Atmosphere':'10'},
+    {'Id':'4', 'Name':'OG', 'Country':'USA', 'Logo':'og.png', 'Teamplay':'40', 'Strategy':'50', 'Atmosphere':'90'},
+    {'Id':'5', 'Name':'Vega', 'Country':'Russia', 'Logo':'vega.png', 'Teamplay':'40', 'Strategy':'30', 'Atmosphere':'10'},
+    {'Id':'6', 'Name':'Empire', 'Country':'Russia', 'Logo':'empire.png', 'Teamplay':'50', 'Strategy':'60', 'Atmosphere':'30'},
+    {'Id':'7', 'Name':'Liquid', 'Country':'USA', 'Logo':'liquid.png', 'Teamplay':'80', 'Strategy':'90', 'Atmosphere':'100'},
+    {'Id':'8', 'Name':'LGD', 'Country':'China', 'Logo':'lgd.png', 'Teamplay':'100', 'Strategy':'70', 'Atmosphere':'40'},
+    {'Id':'9', 'Name':'VG', 'Country':'China', 'Logo':'vg.png', 'Teamplay':'50', 'Strategy':'70', 'Atmosphere':'30'},
+    {'Id':'10', 'Name':'NewBee', 'Country':'China', 'Logo':'newbee.png', 'Teamplay':'60', 'Strategy':'70', 'Atmosphere':'80'}
 ];
 
 function showMatches() {
@@ -43,4 +43,26 @@ function getTeamName(id) {
         if (i===id) var name = team[i].Name;
     }
     return name;
+}
+
+function countTeamRating(id) {
+    for (var i=0; i < allTeam.length; i++) {
+        if(id===allTeam[i].Id) {
+            var rating = Math.round(( parseInt(allTeam[i].Teamplay) + parseInt(allTeam[i].Strategy) + parseInt(allTeam[i].Atmosphere) ) / 3);
+            break;
+        }
+    }
+    return rating;
+}
+
+function countUrRating() {
+    var rating = Math.round(( parseInt(teamStats.Teamplay) + parseInt(teamStats.Strategy) + parseInt(teamStats.Atmosphere) ) / 3);
+    return rating;
+}
+
+function playMatch(id) {
+    //дописати рандомний виграш/програш
+    var result;
+    countUrRating() > countTeamRating(id) ? result=true : result=false;
+    return result;
 }

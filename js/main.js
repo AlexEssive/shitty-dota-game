@@ -7,7 +7,8 @@ var currentDay = 1;
 $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
-    showLoginForm();
+
+    if (getCookie("userName")!==undefined) {showTeam(); console.log(getCookie("userName"));} else {showLoginForm(); console.log("Login first!");}
 
     setInterval(function(){
         $('#string>span').addClass('blink_on');

@@ -75,8 +75,12 @@ function buyPlayer(id,cost) {
     var count = Object.keys(urTeam).length;
     if ((count<5)&&(cash>=cost)) {
         urTeam.push({'Id':String(id)});
-        cash-=cost;
+        cash = cash - cost;
         updateVariables();
+        //зробити модальне окно для вибору ролі гравців
+        //поміняти(зменшити) його стати (внутрі команди), єслі не його роль
+        //прийдеться стати ігроків записувати в urTeam або перезаписувати в allPlayers
+        //+ закинути в cookie
         alert("OKAY!");
     }
     else {
@@ -84,13 +88,13 @@ function buyPlayer(id,cost) {
     }
 }
 
-function kickPlayer(id) {
-    //ne testiv
-    //poidei dolgen peredavatis massiv igrakiv, shob udalyati mogna bulo srasu dekilkox
-    //toest *id - array
+function kickPlayers(Ids) {
+    Ids = Array;
+    Ids = [{'Id':'2'}, {'Id':'5'}, {'Id':'14'}];
     for (var i=0; i < urTeam.length; i++) {
-        if (id===urTeam.Id) delete urTeam.id;
+        for (var j=0; j < Ids.length; j++) {
+            if (Ids[j].Id===urTeam[i].Id) {console.log(urTeam[i].Id); delete urTeam[i].Id;}
+        }
     }
-
     showTeam();
 }

@@ -1,3 +1,7 @@
+var userName = "admin";
+var teamName = "noteam";
+var teamLogo = "img/nologo.png";
+
 function showLoginForm() {
     refreshGameBlock();
     var text="";
@@ -31,9 +35,10 @@ function newUser() {
     teamLogo =  $("#output").attr('src');
 
     urTeam = Array();
-    cash = 1000;
+    cash = 111000;
     fans = 0;
     currentDay = 1;
+    updateVariables();
 
     setCookie("userName",userName);
     setCookie("teamName",teamName);
@@ -65,4 +70,12 @@ function showProfile() {
         "</div></div>";
     text+="</div>";
     $('#gameBlock').append(text);
+}
+
+function logoutUser() {
+    deleteCookie("userName");
+    deleteCookie("teamName");
+    deleteCookie("teamLogo");
+    //udaliti masiv s igrakiv
+    location.reload();
 }

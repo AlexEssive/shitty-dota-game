@@ -17,9 +17,9 @@ var allPlayers = [
 ];
 
 var stats = Array();
-stats['Скилл'] = 'Skill';
-stats['Социальность'] = 'Social';
-stats['Медийность'] = 'Media';
+    stats['Скилл'] = 'Skill';
+    stats['Социальность'] = 'Social';
+    stats['Медийность'] = 'Media';
 
 function showPlayers() {
     var players = allPlayers;
@@ -72,9 +72,11 @@ function showPlayerInfo() {
 }
 
 function scrollList(id) {
-    // $('#player_list').animate({
-    //     scrollTop: $("#"+id).offset().bottom-10
-    // }, 100);
+    //не работає вроді
+    //скролить форму ігроків за стрелочкою в 'Рынок'
+     $('#player_list').animate({
+         scrollTop: $("#"+id).offset().bottom-10
+     }, 100);
 }
 
 function moveTop(cl) {

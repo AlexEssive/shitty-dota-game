@@ -1,15 +1,9 @@
-var userName = "Volodya";
-
-var teamName = "NAVI";
-
-var teamLogo = "img/teams/navi.png";
-
 var urTeam = [{'Id':'15'},{'Id':'2'},{'Id':'13'},{'Id':'14'},{'Id':'5'}];
 
 var teamStats = Array();
-teamStats['Teamplay'] = '10';
-teamStats['Strategy'] = '50';
-teamStats['Atmosphere'] = '90';
+    teamStats['Teamplay'] = '10';
+    teamStats['Strategy'] = '50';
+    teamStats['Atmosphere'] = '90';
 
 function showTeam() {
     var player = allPlayers;
