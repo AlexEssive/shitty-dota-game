@@ -60,6 +60,11 @@ function countUrRating() {
     return rating;
 }
 
+function countUrMedia() {
+    var media = Math.round(( parseInt(urTeam[0].Media) + parseInt(urTeam[1].Media) + parseInt(urTeam[2].Media) + parseInt(urTeam[3].Media) + parseInt(urTeam[4].Media) ) / 5);
+    return media;
+}
+
 function playMatch(id) {
     //дописати рандомний виграш/програш
     var result;

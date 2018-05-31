@@ -1,4 +1,10 @@
-var urTeam = [{'Id':'15'},{'Id':'2'},{'Id':'13'},{'Id':'14'},{'Id':'5'}];
+var urTeam = [
+    {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55'},
+    {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55'},
+    {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55'},
+    {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55'},
+    {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55'}
+    ];
 
 var teamStats = Array();
     teamStats['Teamplay'] = '10';
