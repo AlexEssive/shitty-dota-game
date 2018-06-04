@@ -1,19 +1,15 @@
 function showPlayers() {
     var players = allPlayers;
-    var checked = "";
-    var name = "";
-    var v = true;
+    var checked,name,v = true;
     refreshGameBlock();
     console.log(urTeam);
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
-
-            if (i===0) checked='checked'; else checked='';
-            text += "<li>" +
-                "<input id='"+players[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
-                "<label for='"+players[i].Id+"'>" + players[i].Id + " - " + players[i].Name + "</label>" +
-                "</li>";
-
+        if (i===0) checked='checked'; else checked='';
+        text += "<li>" +
+            "<input id='"+players[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
+            "<label for='"+players[i].Id+"'>" + players[i].Id + " - " + players[i].Name + "</label>" +
+        "</li>";
     }
     text += "</ul></div>";
     text += "<div class='col-1 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
@@ -24,8 +20,7 @@ function showPlayers() {
 }
 
 function showPlayerInfo() {
-    var text = "";
-    var name = "";
+    var text,name;
     var id = $('input[type=radio][name=player_radio]:checked').attr('id');
     var players = allPlayers;
 
@@ -42,7 +37,7 @@ function showPlayerInfo() {
         "</div></div>";
         text+= "<div class='col-3 player_about'>" +
             "<div class='team_action row'><ul class='list wdt100'>" +
-            "<li><button onclick='buyPlayer("+players[i].Id+","+players[i].Cost+")'><i>Купить</i><span>"+players[i].Cost+"$</span></button></li>" +
+            "<li><button onclick='buyPlayer("+players[i].Id+","+players[i].Cost+","+players[i].Fans+")'><i>Купить</i><span>"+players[i].Cost+"$</span></button></li>" +
             "<li>Фанов: <span>"+players[i].Fans+"</span></li>" +
             "<li>ЗП: <span>"+players[i].Salary+"$</span></li>" +
             "</ul></div>" +
@@ -62,22 +57,23 @@ function scrollList(id) {
 }
 
 function moveTop(cl) {
-        $(cl).parent().parent().find('input:checked').parent().prev().children('input').prop("checked", true);
-        scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
-        showPlayerInfo();
+    $(cl).parent().parent().find('input:checked').parent().prev().children('input').prop("checked", true);
+    scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+    showPlayerInfo();
 }
 
 function moveBot(cl) {
-        $(cl).parent().parent().find('input:checked').parent().next().children('input').prop("checked", true);
-        scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
-        showPlayerInfo();
+    $(cl).parent().parent().find('input:checked').parent().next().children('input').prop("checked", true);
+    scrollList($(cl).parent().parent().find('input:checked').parent().prev().children('input').attr('id'));
+    showPlayerInfo();
 }
 
-function buyPlayer(id,cost) {
+function buyPlayer(id,cost,army) {
     var count = Object.keys(urTeam).length;
     if ((count<5)&&(cash>=cost)) {
         urTeam.push({'Id':String(id)});
         cash = cash - cost;
+        fans = fans + army;
         updateVariables();
         //зробити модальне окно для вибору ролі гравців
         //поміняти(зменшити) його стати (внутрі команди), єслі не його роль

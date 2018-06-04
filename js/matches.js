@@ -6,6 +6,13 @@ var allMatches = [
     {'Id':'5', 'Team':'6', 'Type':'bo1', 'Date':'14.05.2018'}
 ];
 
+var allTournaments = [
+    {'Id':'1', 'Name':'The International', 'Date_start':'10.08.2018', 'Date_end':'10.09.2018', 'Prize':'35000000'},
+    {'Id':'2', 'Name':'Boston Major', 'Date_start':'1.06.2018', 'Date_end':'20.06.2018', 'Prize':'5550000'},
+    {'Id':'3', 'Name':'The Summit', 'Date_start':'5.07.2018', 'Date_end':'12.08.2018', 'Prize':'100000'},
+    {'Id':'4', 'Name':'Starladder', 'Date_start':'5.05.2018', 'Date_end':'15.05.2018', 'Prize':'75000'}
+];
+
 var allTeam = [
     {'Id':'1', 'Name':'Na`Vi', 'Country':'Ukraine', 'Logo':'navi.png', 'Teamplay':'10', 'Strategy':'10', 'Atmosphere':'10'},
     {'Id':'2', 'Name':'VP', 'Country':'Russia', 'Logo':'vp.png', 'Teamplay':'100', 'Strategy':'100', 'Atmosphere':'100'},
@@ -56,12 +63,14 @@ function countTeamRating(id) {
 }
 
 function countUrRating() {
-    var rating = Math.round(( parseInt(teamStats.Teamplay) + parseInt(teamStats.Strategy) + parseInt(teamStats.Atmosphere) ) / 3);
+    var rating = 0;
+    rating = Math.round(( parseInt(teamStats.Teamplay) + parseInt(teamStats.Strategy) + parseInt(teamStats.Atmosphere) ) / 3);
     return rating;
 }
 
 function countUrMedia() {
-    var media = Math.round(( parseInt(urTeam[0].Media) + parseInt(urTeam[1].Media) + parseInt(urTeam[2].Media) + parseInt(urTeam[3].Media) + parseInt(urTeam[4].Media) ) / 5);
+    var media = 0;
+    media = Math.round(( parseInt(urTeam[0].Media) + parseInt(urTeam[1].Media) + parseInt(urTeam[2].Media) + parseInt(urTeam[3].Media) + parseInt(urTeam[4].Media) ) / 5);
     return media;
 }
 
@@ -70,4 +79,17 @@ function playMatch(id) {
     var result;
     countUrRating() > countTeamRating(id) ? result=true : result=false;
     return result;
+}
+
+function showTournaments() {
+    var tournaments = allTournaments;
+    refreshGameBlock();
+
+    var list="<div class='tournaments_list'>";
+    for (var i=0; i < tournaments.length; i++) {
+        list+="<span class='bold'>" + tournaments[i].Name + " (" + tournaments[i].Date_start + " - " + tournaments[i].Date_end + ")" + "</span><br>";
+    }
+    list+="</div>";
+
+    $('#gameBlock').append(list);
 }

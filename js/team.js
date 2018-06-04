@@ -4,7 +4,7 @@ var urTeam = [
     {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55'},
     {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55'},
     {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55'}
-    ];
+];
 
 var teamStats = Array();
     teamStats['Teamplay'] = '10';
@@ -127,52 +127,6 @@ function playerAction(player) {
     var rect = player.getBoundingClientRect();
     var id = player.id;
     showMenu(rect.top,rect.left,id);
-}
-
-function showMenu(top,left,id) {
-    $('.menu').remove();
-
-    $('#'+id).append("\t<menu id='contextMenu' class=\"menu\">\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-folder-open\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Отдыхать</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<!--<li class=\"menu-item disabled\">-->\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<span class=\"menu-text\">Анализ реплеев</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-reply\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Разработка стратегий</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-download\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Тренироваться</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-edit\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Стримить</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t\t<li class=\"menu-item\">\n" +
-        "\t\t\t<button type=\"button\" class=\"menu-btn\" onclick=\"menuRest(this);\">\n" +
-        "\t\t\t\t<i class=\"fa fa-trash\"></i>\n" +
-        "\t\t\t\t<span class=\"menu-text\">Психолог</span>\n" +
-        "\t\t\t</button>\n" +
-        "\t\t</li>\n" +
-        "\t</menu>");
-
-    $(".menu").css({top: 40,  position:'absolute'});
-    $(".menu").show();
 }
 
 function changeStatus(id) {

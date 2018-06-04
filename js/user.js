@@ -28,8 +28,10 @@ function showLoginForm() {
 }
 
 function newUser() {
-    // $("body").load("main.html");
 
+    //кукі через раз работають, якось связано з серврером phpstorm
+    //записуються, коли є кука з phpstorm session id
+    // $("body").load("main.html");
     userName =  $("#user-name").val();
     teamName =  $("#team-cap").val();
     teamLogo =  $("#output").attr('src');

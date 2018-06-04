@@ -23,8 +23,7 @@ var stats = Array();
 
 function showPlayers() {
     var players = allPlayers;
-    var checked = "";
-    var name = "";
+    var checked,name;
     refreshGameBlock();
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
@@ -44,9 +43,41 @@ function showPlayers() {
     showPlayerInfo();
 }
 
+function showPlayersRating() {
+    var rating = allPlayers;
+    var checked,name;
+    refreshGameBlock();
+    var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
+
+    rating.sort(function (a, b) {
+        if (a.Skill < b.Skill) {
+            return 1;
+        }
+        if (a.Skill > b.Skill) {
+            return -1;
+        }
+        return 0;
+    });
+
+    for (var i=0; i < rating.length; i++) {
+        if (i===0) checked  = 'checked'; else checked='';
+        text += "<li>" +
+            "<input id='"+rating[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
+            "<label for='"+rating[i].Id+"'>" +
+            rating[i].Name +
+            "</label>" +
+            "</li>";
+    }
+    text += "</ul></div>";
+    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
+        "<img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
+    $('#gameBlock').append(text);
+
+    showPlayerInfo();
+}
+
 function showPlayerInfo() {
-    var text = "";
-    var name = "";
+    var text,name;
     var id = $('input[type=radio][name=player_radio]:checked').attr('id');
     var players = allPlayers;
     text += "<div class='col-6 player_detail'>";

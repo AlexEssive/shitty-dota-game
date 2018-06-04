@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>GAME</title>
+	<title>Dota 2 Manager</title>
 	<link rel="icon" href="img/logo.png">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/plugins/jquery-3.3.1.min.js"></script>
 	<script src="js/plugins/bootstrap.min.js"></script>
+	<!--я заєбався бачити ці міліон подключених js-ок, можна якось автоматизувати подключення всіх файлів з папки + убрати з main.html їх-->
 	<script src="js/main.js"></script>
 	<script src="js/players.js"></script>
 	<script src="js/days.js"></script>
@@ -58,8 +59,8 @@
                 <a onClick="showTeam();"><li>Состав</li></a>
                 <a onClick="showPlayers();"><li>Рынок</li></a>
                 <a onClick="showMatches();"><li>Рассписание</li></a>
-                <a href=""><li>Турниры</li></a>
-                <a href=""><li>Таблица лидеров</li></a>
+                <a onClick="showTournaments();"><li>Турниры</li></a>
+                <a onClick="showPlayersRating();"><li>Таблица лидеров</li></a>
                 <a onClick="showProfile();"><li>Аккаунт</li></a>
                 <a onClick="logoutUser();"><li>Выйти</li></a>
             </ul>
@@ -74,7 +75,7 @@
 		Спонсоры: <span id="income" class="span-style"></span>/мес.
 	</div>
 	<div class="offset-4 col-3 text-center">
-		<img class="img-social" src="img/money-bag.png" alt="cash"><span id="cash" class="span-style"></span>
+		<img class="img-social" src="img/money_bag.png" alt="cash"><span id="cash" class="span-style"></span>
 	</div>
 </div>
 
