@@ -7,7 +7,9 @@ $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
 
-    if (getCookie("userName")!==undefined) {showTeam(); console.log(getCookie("userName"));} else {showLoginForm(); console.log("Login first!");}
+    //if (getCookie("userName")!==undefined) {showTeam(); console.log(getCookie("userName"));} else {showLoginForm(); console.log("Login first!");}
+
+    showEmpty();
 
     //шо ета?
     setInterval(function(){
