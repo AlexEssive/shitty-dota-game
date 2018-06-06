@@ -6,10 +6,7 @@ var currentDay = 1;
 $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
-
-    //if (getCookie("userName")!==undefined) {showTeam(); console.log(getCookie("userName"));} else {showLoginForm(); console.log("Login first!");}
-
-    showEmpty();
+    if (getCookie("userName")!==undefined) {showTeam(); console.log(getCookie("userName"));} else {showLoginForm(); console.log("Login first!");}
 
     //шо ета?
     setInterval(function(){

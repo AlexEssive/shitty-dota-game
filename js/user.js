@@ -18,7 +18,7 @@ function showLoginForm() {
                     "<input type='file' id='file' accept='image/*' onchange='loadFile(event)' class='custom-file-input'> " +
                     "<span class='custom-file-control'>обзор...</span> " +
                 "</label></li>" +
-            "<li><a onclick='newUser();' class='float-right pointer'><img src='img/arrow_right.png'></a></li>" +
+            "<li><a onclick='newUser();' class='float-right pointer'><img src='img/arrow_submit.png'></a></li>" +
         "</ul>" +
     "</div></div>";
     text+="</div>";
@@ -67,7 +67,7 @@ function showProfile() {
                 "<input type='file' id='file' accept='image/*' onchange='loadFile(event)' class='custom-file-input'> " +
                 "<span class='custom-file-control'>обзор...</span> " +
             "</label></li>" +
-        "<li><a onclick='newUser();' class='float-right pointer'><img src='img/arrow_right.png'></a></li>" +
+        "<li><a onclick='newUser();' class='float-right pointer'><img src='img/arrow_submit.png'></a></li>" +
         "</ul>" +
         "</div></div>";
     text+="</div>";

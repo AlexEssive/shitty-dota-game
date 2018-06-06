@@ -23,7 +23,7 @@ var stats = Array();
 
 function showPlayers() {
     var players = allPlayers;
-    var checked,name;
+    var checked="",name="";
     refreshGameBlock();
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
@@ -45,7 +45,7 @@ function showPlayers() {
 
 function showPlayersRating() {
     var rating = allPlayers;
-    var checked,name;
+    var checked="",name="";
     refreshGameBlock();
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
 
@@ -77,7 +77,7 @@ function showPlayersRating() {
 }
 
 function showPlayerInfo() {
-    var text,name;
+    var text="",name="";
     var id = $('input[type=radio][name=player_radio]:checked').attr('id');
     var players = allPlayers;
     text += "<div class='col-6 player_detail'>";

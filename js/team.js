@@ -1,9 +1,9 @@
 var urTeam = [
-    {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55'},
-    {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55'},
-    {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55'},
-    {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55'},
-    {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55'}
+    {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'1'},
+    {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'2'},
+    {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'3'},
+    {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'4'},
+    {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'5'}
 ];
 
 var teamStats = Array();
@@ -33,12 +33,12 @@ function showTeam() {
                     "<div id='status" + n + "'><span>Status</span></div>" +
                     "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
                     "<div class='col-6 team_info'>" +
-                    "<span class='pos_span'>" + player[i].Position + "</span><br>" +
+                    "<span class='pos_span'>" + team[j].Position + "</span><br>" +
                     "<span>Name: " + player[i].Name + "</span><br>" +
                     "<span>Age: " + player[i].Age + "</span><br>" +
                     "<span>About: " + player[i].About + "</span>" +
                     "</div></div>" +
-                    appendProgressBars(player[i], i + 1) +
+                    appendProgressBars(team[j], i + 1) +
                     "</div>";
             }
         }
@@ -75,7 +75,8 @@ function appendTeamBars(team) {
         }
         else if ((stat <= 100) && (stat > 75)) {
             classToColor = 'bg-success';
-        } else {
+        }
+        else {
             classToColor = 'bg-dark';
         }
         text+="<div class='col-4'><div class='row'><div class='col-8'>" +

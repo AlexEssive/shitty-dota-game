@@ -1,11 +1,11 @@
 function showPlayers() {
     var players = allPlayers;
-    var checked,name,v = true;
+    var checked="",name="",v = true;
     refreshGameBlock();
     console.log(urTeam);
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
-        if (i===0) checked='checked'; else checked='';
+        if (i===0) checked='checked'; else checked="";
         text += "<li>" +
             "<input id='"+players[i].Id+"' class='player_radio' type='radio' name='player_radio' "+checked+">" +
             "<label for='"+players[i].Id+"'>" + players[i].Id + " - " + players[i].Name + "</label>" +
@@ -14,13 +14,14 @@ function showPlayers() {
     text += "</ul></div>";
     text += "<div class='col-1 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
         "<img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
+
     $('#gameBlock').append(text);
 
     showPlayerInfo();
 }
 
 function showPlayerInfo() {
-    var text,name;
+    var text="",name="";
     var id = $('input[type=radio][name=player_radio]:checked').attr('id');
     var players = allPlayers;
 
@@ -37,7 +38,7 @@ function showPlayerInfo() {
         "</div></div>";
         text+= "<div class='col-3 player_about'>" +
             "<div class='team_action row'><ul class='list wdt100'>" +
-            "<li><button onclick='buyPlayer("+players[i].Id+","+players[i].Cost+","+players[i].Fans+")'><i>Купить</i><span>"+players[i].Cost+"$</span></button></li>" +
+            "<li><button onclick='showModal("+players[i].Id+","+players[i].Cost+","+players[i].Fans+")'><i>Купить</i><span>"+players[i].Cost+"$</span></button></li>" +
             "<li>Фанов: <span>"+players[i].Fans+"</span></li>" +
             "<li>ЗП: <span>"+players[i].Salary+"$</span></li>" +
             "</ul></div>" +
@@ -68,21 +69,49 @@ function moveBot(cl) {
     showPlayerInfo();
 }
 
-function buyPlayer(id,cost,army) {
+function buyPlayer(id,cost,army,role) {
+    var norole = false;
+    var notwin = false;
     var count = Object.keys(urTeam).length;
+    var Skill='55',Social='55',Media='55';
+    var percent = getRndInteger(50,70); // returns a number between 1 and 100; //процент втрати Skilla
+
+    console.log(percent);
+
     if ((count<5)&&(cash>=cost)) {
-        urTeam.push({'Id':String(id)});
-        cash = cash - cost;
-        fans = fans + army;
-        updateVariables();
-        //зробити модальне окно для вибору ролі гравців
-        //поміняти(зменшити) його стати (внутрі команди), єслі не його роль
-        //прийдеться стати ігроків записувати в urTeam або перезаписувати в allPlayers
-        //+ закинути в cookie
-        showPlayers();
+
+        for(var i=0; i<urTeam.length; i++) {
+            if (parseInt(urTeam[i].Position)===role) {norole = true; break;} else norole = false;
+        }
+
+        for(var i=0; i<urTeam.length; i++) {
+            if (parseInt(urTeam[i].Id)===id) {notwin = true; break;} else notwin = false;
+        }
+
+        if (!norole) {
+            if (!notwin) {
+
+                //зменшення параметра Skill, якщо вибрати не його роль
+                for (var i=0; i<allPlayers.length; i++) {
+                    if (parseInt(allPlayers[i].Id)===id) {
+                        if (parseInt(allPlayers[i].Position)!==role) Skill = Math.round(Skill - (Skill*percent)/100);
+                    }
+                }
+
+                urTeam.push({'Id':String(id), 'Skill':Skill, 'Social':Social, 'Media':Media, 'Position':String(role)});
+                cash = cash - cost;
+                fans = fans + army;
+                updateVariables();
+
+
+                //+ закинути в cookie
+                document.getElementById('myModal').style.display = "none";
+                showPlayers();
+            } else alert("Такой игрок уже в команде!");
+        } else alert("Виберите другую роль!");
     }
     else {
-        alert("NO!");
+        alert("Число игроков - ограничено!");
     }
 }
 
@@ -95,4 +124,8 @@ function kickPlayers(Ids) {
         }
     }
     showTeam();
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
 }
