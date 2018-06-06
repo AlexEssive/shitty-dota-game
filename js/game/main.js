@@ -21,30 +21,22 @@ function refreshGameBlock()
     $('.main-holder').append("<div id='gameBlock' class='main_block nolist row'></div>");
 }
 
-function updateVariables()
-{
+function updateVariables() {
     $("#income").text('+' + income + '$');
     $("#cash").text(cash + '$');
     $("#fans").text(fans);
     $("#day").text(currentDay);
+}
 
 // анімація набігших фанатів(обратно тоже работає)
-    // var start_fans = parseInt($('#fans').text);
-    // var finish_fans = fans;
-    //
-    // $('#fans').animate({ num: finish_fans - start_fans}, {
-    //     duration: 3000,
-    //     step: function (num){
-    //         this.innerHTML = parseInt(num + start_fans)
-    //     }
-    // });
-}
+//     var start_fans = parseInt($('#fans').text);
+//     var finish_fans = fans;
+//
+//     $('#fans').animate({ num: finish_fans - start_fans}, {
+//         duration: 3000,
+//         step: function (num){
+//             this.innerHTML = parseInt(num + start_fans)
+//         }
+//     });
+// }
 
-function showSettings()
-{
-    refreshGameBlock();
-    $('.main_block').append("<div class='settings'>" +
-        "<h2>Настройки</h2>" +
-        "</div>"
-    );
-}

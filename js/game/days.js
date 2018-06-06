@@ -1,7 +1,6 @@
 function startNewDay()
 {
     var fansIncome = 1;
-    cash += income;
     fans += fansIncome;
     currentDay++;
     if (currentDay % 30 === 0) {

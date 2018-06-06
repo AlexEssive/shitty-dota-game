@@ -1,6 +1,6 @@
 var userName = "admin";
 var teamName = "noteam";
-var teamLogo = "img/nologo.png";
+var teamLogo = "../img/nologo.png";
 
 function showLoginForm() {
     refreshGameBlock();
@@ -13,7 +13,7 @@ function showLoginForm() {
             "<li><a href='' class='float-left'><img src='img/dota.png' alt='nologo'></a><a href='' class='float-right'><img src='img/settings.png' alt='nologo'></a></li>" +
             "<li><span>Ваш никнейм</span><br><input id='user-name' type='text' value=''></li>" +
             "<li><span>Название команды</span><br><input id='team-cap' type='text' value=''></li>" +
-            "<li><img id='output' src='img/nologo.jpg' alt='nologo' class='logo_team'>" +
+            "<li><img id='output' src='../img/nologo.png' alt='nologo' class='logo_team'>" +
                 "<label class='custom-file'> " +
                     "<input type='file' id='file' accept='image/*' onchange='loadFile(event)' class='custom-file-input'> " +
                     "<span class='custom-file-control'>обзор...</span> " +
