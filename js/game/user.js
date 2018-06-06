@@ -1,6 +1,6 @@
-var userName = "admin";
-var teamName = "noteam";
-var teamLogo = "../img/nologo.png";
+userName = "admin";
+teamName = "noteam";
+teamLogo = "../img/nologo.png";
 
 function showLoginForm() {
     refreshGameBlock();

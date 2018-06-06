@@ -1,4 +1,4 @@
-var urTeam = [
+urTeam = [
     {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'1'},
     {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'2'},
     {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'3'},

@@ -1,7 +1,7 @@
-var income = 100;
-var cash = 111000;
-var fans = 228;
-var currentDay = 1;
+income = 100;
+cash = 111000;
+fans = 228;
+currentDay = 1;
 
 $(document).ready(function() {
     refreshGameBlock();
