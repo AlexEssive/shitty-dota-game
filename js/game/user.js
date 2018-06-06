@@ -1,11 +1,8 @@
-userName = "admin";
-teamName = "noteam";
-teamLogo = "../img/nologo.png";
-
 function showLoginForm() {
     refreshGameBlock();
     var text="";
 
+    text+="<div id='overlay'>";
     text+="<div class='container'>";
     text+="<div class='row login_top'><div class='offset-3 col-6 pad0'><button>Создайте команду</button></div></div>";
     text+="<div class='row login_main'><div class='offset-3 col-6 login_form pad0'>" +
@@ -21,10 +18,11 @@ function showLoginForm() {
             "<li><a onclick='newUser();' class='float-right pointer'><img src='img/arrow_submit.png'></a></li>" +
         "</ul>" +
     "</div></div>";
-    text+="</div>";
+    text+="</div></div>";
 
     // $("body").append(text);
     $('#gameBlock').append(text);
+    showOverlay();
 }
 
 function newUser() {
@@ -40,16 +38,14 @@ function newUser() {
     cash = 111000;
     fans = 0;
     currentDay = 1;
-    updateVariables();
-
-    setCookie("userName",userName);
-    setCookie("teamName",teamName);
-    setCookie("teamLogo",teamLogo);
 
     $("#team-logo").attr('src',teamLogo);
     $("#team-name").text(teamName);
 
     showTeam();
+    hideOverlay();
+    initSave();
+    updateVariables();
 }
 
 function showProfile() {

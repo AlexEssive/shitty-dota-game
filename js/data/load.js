@@ -2,11 +2,18 @@ loadData = new LoadData();
 
 function LoadData() {
 
+    this.loadPlayerData = function () {
+        userName = getCookie('userName');
+        teamName = getCookie('teamName');
+        teamLogo = getCookie('teamLogo');
+    };
+
     this.loadTeam = function () {
-        setCookie("team", JSON.stringify(urTeam));
+        urTeam = JSON.parse(getCookie('players'));
     }
 }
 
 function initLoad() {
-    saveData.saveTeam();
+    loadData.loadPlayerData();
+    loadData.loadTeam();
 }

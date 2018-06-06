@@ -5,14 +5,14 @@ currentDay = 1;
 
 $(document).ready(function() {
     refreshGameBlock();
+    initGame();
     updateVariables();
-    if (getCookie("userName")!==undefined) {showTeam(); console.log(getCookie("userName"));} else {showLoginForm(); console.log("Login first!");}
 
-    //шо ета?
-    setInterval(function(){
-        $('#string>span').addClass('blink_on');
-        setTimeout(function(){$('#string>span').removeClass('blink_on')},1500);
-    },6000)
+    //шо ета? // ya hz
+    // setInterval(function(){
+    //     $('#string>span').addClass('blink_on');
+    //     setTimeout(function(){$('#string>span').removeClass('blink_on')},1500);
+    // },6000)
 });
 
 function refreshGameBlock()
@@ -26,6 +26,15 @@ function updateVariables() {
     $("#cash").text(cash + '$');
     $("#fans").text(fans);
     $("#day").text(currentDay);
+    $("#team-name").text(teamName);
+}
+
+function initGame() {
+    if (getCookie("userName")!==undefined) {
+        initLoad();
+    } else {
+        showLoginForm();
+    }
 }
 
 // анімація набігших фанатів(обратно тоже работає)

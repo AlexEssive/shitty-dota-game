@@ -1,10 +1,10 @@
-urTeam = [
-    {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'1'},
-    {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'2'},
-    {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'3'},
-    {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'4'},
-    {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'5'}
-];
+// urTeam = [
+//     {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'1'},
+//     {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'2'},
+//     {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'3'},
+//     {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'4'},
+//     {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'5'}
+// ];
 
 var teamStats = Array();
     teamStats['Teamplay'] = '10';

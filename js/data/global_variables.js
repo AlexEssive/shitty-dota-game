@@ -6,23 +6,23 @@
  */
 
 /** Змінна яка хранить ігроків в команді ігрока **/
-var urTeam;
+var urTeam = '';
 
 /** Змінна яка хранить всіх ігроків **/
-var allPlayers;
+var allPlayers = '';
 
 /** Змінні юзера **/
-var userName;
-var teamName;
-var teamLogo;
+var userName = '';
+var teamName = '';
+var teamLogo = '';
 
 /** День зараз **/
-var currentDay;
+var currentDay = 1;
 
 /** Бабоси **/
-var income;
-var cash;
+var income = '';
+var cash = '';
 
 /** Фанчики **/
-var fans;
-var fansIncome;
+var fans = '';
+var fansIncome = '';

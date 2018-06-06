@@ -1,5 +1,6 @@
+const cookieNamePrefix = 'dm-';
+
 function setCookie(name, value, options) {
-    const namePrefix = 'dm-';
     options = options || {};
 
     var expires = options.expires;
@@ -15,7 +16,7 @@ function setCookie(name, value, options) {
 
     value = encodeURIComponent(value);
 
-    var updatedCookie = namePrefix + name + "=" + value;
+    var updatedCookie = cookieNamePrefix + name + "=" + value;
 
     for (var propName in options) {
         updatedCookie += "; " + propName;
@@ -28,12 +29,14 @@ function setCookie(name, value, options) {
 }
 
 function deleteCookie(name) {
+    name = cookieNamePrefix + name;
     setCookie(name, "", {
         expires: -1
     })
 }
 
 function getCookie(name) {
+    name = cookieNamePrefix + name;
     var matches = document.cookie.match(new RegExp(
         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
