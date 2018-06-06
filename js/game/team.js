@@ -25,6 +25,7 @@ function showTeam() {
 
     text+="<div class='row team'>";
     text+="<div class='col-11 pad0 team_cards'>";
+    console.log(player);
     for (var i=0; i < player.length; i++) {
         for (var j=0; j < team.length; j++) {
             if (team[j].Id===player[i].Id) {

@@ -1,6 +1,9 @@
 //load libs
 loadScript("plugins/bootstrap.min.js");
 
+//load data
+loadScript("data/data.js");
+
 //load game scripts
 loadScript("game/main.js");
 loadScript("game/players.js");
