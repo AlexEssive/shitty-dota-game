@@ -26,13 +26,13 @@ loadScript("data/save.js");
 loadScript("data/load.js");
 
 /*** load game scripts (ігрові скріпти) ***/
-loadScript("game/main.js");
 loadScript("game/players.js");
 loadScript("game/days.js");
 loadScript("game/market.js");
 loadScript("game/team.js");
 loadScript("game/matches.js");
 loadScript("game/user.js");
+loadScript("game/main.js");
 
 /***********************************************/
 
