@@ -19,7 +19,8 @@ loadScript("libs/upload.js");
 loadScript("libs/context.js");
 
 /*** load data (всьо, шо касається джсон дати і кукі менеджмента) ***/
-loadScript("data/data.js");
+loadScript("data/players_data.js");
+loadScript("data/save.js");
 
 /*** load game scripts (ігрові скріпти) ***/
 loadScript("game/main.js");
