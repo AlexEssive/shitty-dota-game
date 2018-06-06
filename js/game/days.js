@@ -7,6 +7,7 @@ function startNewDay()
      cash += income;
     }
     updateVariables();
+    initSave();
 }
 
 function countSponsorsCash() {

@@ -1,4 +1,5 @@
 function setCookie(name, value, options) {
+    const namePrefix = 'dm-';
     options = options || {};
 
     var expires = options.expires;
@@ -14,7 +15,7 @@ function setCookie(name, value, options) {
 
     value = encodeURIComponent(value);
 
-    var updatedCookie = name + "=" + value;
+    var updatedCookie = namePrefix + name + "=" + value;
 
     for (var propName in options) {
         updatedCookie += "; " + propName;
