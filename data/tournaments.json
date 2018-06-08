@@ -1,0 +1,6 @@
+[
+  {"Id":"1", "Name":"The International", "Date_start":"10.08.2018", "Date_end":"10.09.2018", "Prize":"35000000"},
+  {"Id":"2", "Name":"Boston Major", "Date_start":"1.06.2018", "Date_end":"20.06.2018", "Prize":"5550000"},
+  {"Id":"3", "Name":"The Summit", "Date_start":"5.07.2018", "Date_end":"12.08.2018", "Prize":"100000"},
+  {"Id":"4", "Name":"Starladder", "Date_start":"5.05.2018", "Date_end":"15.05.2018", "Prize":"75000"}
+]

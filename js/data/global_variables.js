@@ -26,3 +26,4 @@ var cash = '';
 /** Фанчики **/
 var fans = '';
 var fansIncome = '';
+

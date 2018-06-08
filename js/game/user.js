@@ -1,9 +1,9 @@
 function showLoginForm() {
+
     refreshGameBlock();
     var text="";
-
     text+="<div id='overlay'>";
-    text+="<div class='container'>";
+    text+="<div class='container modal_login'>";
     text+="<div class='row login_top'><div class='offset-3 col-6 pad0'><button>Создайте команду</button></div></div>";
     text+="<div class='row login_main'><div class='offset-3 col-6 login_form pad0'>" +
         "<ul class='list'>" +
@@ -20,16 +20,12 @@ function showLoginForm() {
     "</div></div>";
     text+="</div></div>";
 
-    // $("body").append(text);
     $('#gameBlock').append(text);
     showOverlay();
 }
 
 function newUser() {
 
-    //кукі через раз работають, якось связано з серврером phpstorm
-    //записуються, коли є кука з phpstorm session id
-    // $("body").load("main.html");
     userName =  $("#user-name").val();
     teamName =  $("#team-cap").val();
     teamLogo =  $("#output").attr('src');
@@ -49,6 +45,7 @@ function newUser() {
 }
 
 function showProfile() {
+
     refreshGameBlock();
     var text="";
     text+="<div class='container'>";
@@ -71,9 +68,10 @@ function showProfile() {
 }
 
 function logoutUser() {
+
     deleteCookie("userName");
     deleteCookie("teamName");
     deleteCookie("teamLogo");
-    //udaliti masiv s igrakiv
+    deleteCookie("players");
     location.reload();
 }

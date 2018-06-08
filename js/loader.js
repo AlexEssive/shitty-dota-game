@@ -22,6 +22,7 @@ loadScript("libs/overlay.js");
 /*** load data (всьо, шо касається джсон дати і кукі менеджмента) ***/
 loadScript("data/global_variables.js");
 loadScript("data/players_data.js");
+loadScript("data/messages.js");
 loadScript("data/save.js");
 loadScript("data/load.js");
 

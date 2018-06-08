@@ -8,7 +8,7 @@ $(document).ready(function() {
     initGame();
     updateVariables();
 
-    //шо ета? // ya hz
+    //шо ета? // ya hz // аху*нно розробляєм
     // setInterval(function(){
     //     $('#string>span').addClass('blink_on');
     //     setTimeout(function(){$('#string>span').removeClass('blink_on')},1500);
@@ -27,6 +27,7 @@ function updateVariables() {
     $("#fans").text(fans);
     $("#day").text(currentDay);
     $("#team-name").text(teamName);
+    $("#team-logo").attr('src',teamLogo);
 }
 
 function initGame() {

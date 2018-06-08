@@ -53,12 +53,9 @@ ul {list-style-type: none;}
 
 .img-social {width: 25px;}
 .team-logo {height: 100px;}
-.team-name {}
 .img-head {width: 45px; }
 
-.pos_span {
-    color: #ffffff;
-}
+.pos_span { color: #ffffff; }
 
 .matches_list {
   overflow: auto;
@@ -70,9 +67,7 @@ ul {list-style-type: none;}
   padding: 15px;
 }
 
-.team_cards {
-    display: inline-flex;
-}
+.team_cards { display: inline-flex; }
 
 .team_card {
   width: 18%;
@@ -90,10 +85,13 @@ ul {list-style-type: none;}
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.team_card input[type="checkbox"] {
+    visibility: visible;
+}
+
 .team_card img {
     background: white;
     min-width: 100%;
-    /*height: 50%;*/
     width: 100%;
     border: 2px ridge #292929;
     height: 18vh;
@@ -104,9 +102,7 @@ ul {list-style-type: none;}
     margin-top: 2%
 }
 
-.team_action i {
-    float: left;
-}
+.team_action i { float: left; }
 
 .team_action span {
     color: green;
@@ -194,9 +190,7 @@ ul {list-style-type: none;}
     text-decoration: none;
 }
 
-.team_kick a:hover{
-    color: darkred;
-}
+.team_kick a:hover{ color: darkred; }
 
 input[type="checkbox"] { visibility: hidden; }
 
@@ -275,7 +269,7 @@ input[type="radio"]:checked + label {
 
 input[type="radio"] {display: none}
 
-/*context menu*/
+/*///////context menu////////*/
 
 .menu {
     transition: transform 0.1s ease-out, opacity 0.1s ease-out;
@@ -384,7 +378,7 @@ input[type="radio"] {display: none}
     transition-delay: 300ms;
 }
 
-/*end context menu*/
+/*/////end context menu////////*/
 
 .login_top, .login_main {
     width: 100%;
@@ -399,11 +393,6 @@ input[type="radio"] {display: none}
     border: 2px solid white;
     height: 40px;
     font-size: 20px;
-}
-
-.login_top button:hover {
-    cursor: pointer;
-    background: #01C3F4;
 }
 
 .login_form {
@@ -464,22 +453,22 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     height: 7vw;
 }
 
-/*modal window*/
+/*/////////modal window////////*/
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
 .modal-content {
     border: 2px solid white;
     color: white;
@@ -489,7 +478,6 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     width: 35%;
 }
 
-/* The Close Button */
 .close {
     color: white;
     float: right;
@@ -504,6 +492,8 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     text-decoration: none;
     cursor: pointer;
 }
+
+/*//////end modal window////////*/
 
 .text-role {
     display: block;
@@ -522,3 +512,5 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
 }
+
+.modal_login { margin-top: 5%;}

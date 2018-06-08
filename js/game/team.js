@@ -1,37 +1,26 @@
-// urTeam = [
-//     {'Id':'15', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'1'},
-//     {'Id':'2', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'2'},
-//     {'Id':'13', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'3'},
-//     {'Id':'14', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'4'},
-//     {'Id':'5', 'Skill':'55', 'Social':'55', 'Media':'55', 'Position':'5'}
-// ];
-
 var teamStats = Array();
     teamStats['Teamplay'] = '10';
     teamStats['Strategy'] = '50';
     teamStats['Atmosphere'] = '90';
 
 function showTeam() {
+
     var player = allPlayers;
     var team = urTeam;
     var text = "";
     refreshGameBlock();
-
-    //top buttons
     text+="<div class='row team_action' style='margin-bottom: 2%'>" +
         "<div class='col-4'><button><i>Пиар</i> <span>500$</span></button></div>" +
         "<div class='col-4'><button><i>Написать пост</i> <span>500$</span></button></div>" +
-        "</div>";
-
+        "</div>"; //top buttons
     text+="<div class='row team'>";
     text+="<div class='col-11 pad0 team_cards'>";
-    console.log(player);
     for (var i=0; i < player.length; i++) {
         for (var j=0; j < team.length; j++) {
             if (team[j].Id===player[i].Id) {
                 var n = i + 1;
                 text+="<div id='card" + n + "' class='team_card' onclick='playerAction(this);'>" +
-                    "<div id='status" + n + "'><span>Status</span></div>" +
+                    "<div id='status" + n + "'><span>Status</span><input name='" + n + "' class='check-players' type='checkbox'></div>" +
                     "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
                     "<div class='col-6 team_info'>" +
                     "<span class='pos_span'>" + team[j].Position + "</span><br>" +
@@ -46,24 +35,21 @@ function showTeam() {
     }
     text+="</div><div class='col-1 team_kick'><a class='' href=''>kick</a></div>";
     text+="</div>";
-
-    //bottom buttons
     text+="<div class='row team_action'>" +
         "<div class='col-4'><button><i>Буткемп</i> <span>500$</span></button></div>" +
         "<div class='col-4'><button><i>Фотосет</i> <span>500$</span></button></div>" +
         "<div class='col-4'><button><i>Поменять роль</i> <span>500$</span></button></div>" +
-        "</div>";
+        "</div>"; //bottom buttons
 
     //bottom team stats
     text+=appendTeamBars();
-
     $('#gameBlock').append(text);
 }
 
 function appendTeamBars(team) {
+
     var text = "";
     text+="<div class='row team_stats'>";
-
     for (var k in teamStats) {
         var stat = teamStats[k];
         var classToColor;
@@ -89,14 +75,13 @@ function appendTeamBars(team) {
             "</div></div>";
     }
     text+="</div>";
-
     return text;
 }
 
 function appendProgressBars(player, number) {
+
     var text = "";
     text+="<div class='player_stats'>";
-
     for (var k in stats) {
         var stat = player[stats[k]];
         var classToColor;
@@ -121,7 +106,6 @@ function appendProgressBars(player, number) {
             "</div>";
     }
     text+="</div>";
-
     return text;
 }
 
