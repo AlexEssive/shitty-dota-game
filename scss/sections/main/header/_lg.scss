@@ -1,5 +1,7 @@
 @media (min-width: 1200px) {
   .front-page {
+    width: 100%;
+    height: 100%;
     .navigation-container {
       @include flex-column;
       justify-content: center;
@@ -8,7 +10,7 @@
       top: 50px;
       left: 0;
       background: $control;
-      height: calc(100% - 75px);
+      height: calc(100% - 50px);
       .menu-wrapper {
         li {
           .tab {
@@ -26,6 +28,7 @@
             }
           }
           .active {
+            color: $border;
             border-left: solid 5px $border;
           }
         }
@@ -70,6 +73,71 @@
       }
       .profile-wrapper {
         margin-left: auto;
+      }
+    }
+    .content-container {
+      @include flex-row;
+      width: calc(100% - 50px);
+      flex-wrap: nowrap;
+      margin-left: 50px;
+      margin-top: 50px;
+      height: calc(100% - 50px);
+      padding: 15px;
+      justify-content: space-between;
+      align-items: flex-start;
+      .view-block {
+        margin: 0 15px;
+        @include flex-column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background: $block;
+        height: 100px;
+        min-width: 200px;
+        transition: all .25s ease-in-out;
+        box-shadow: 0 0 1px 1px $shadow;
+        color: $text;
+        &:hover {
+          box-shadow: 0 0 5px 1px $shadow;
+        }
+        h4 {
+          color: $border;
+          font-size: 2rem;
+        }
+      }
+      .links-block {
+        margin: 0 15px;
+        @include flex-row;
+        flex: 0 1 50%;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+        background: $block;
+        height: 100px;
+        transition: all .25s ease-in-out;
+        box-shadow: 0 0 1px 1px $shadow;
+        color: $text;
+        &:hover {
+          box-shadow: 0 0 5px 1px $shadow;
+        }
+        .title {
+          @include flex-row;
+          transition: all .25s ease-in-out;
+          border-radius: 15px;
+          width: 100px;
+          opacity: .5;
+          border: solid 1px $border;
+          justify-content: center;
+          align-items: center;
+          height: 35px;
+          h4 {
+            color: $border;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
   }
