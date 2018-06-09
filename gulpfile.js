@@ -6,13 +6,13 @@ let sourcemaps = require('gulp-sourcemaps');
 let cleanCSS = require('gulp-clean-css');
 
 gulp.task('minify-css', () => {
-    return gulp.src('css/*.css')
+    return gulp.src('./css/*.css')
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('css//minified'));
+        .pipe(gulp.dest('css/minified'));
 });
 
 gulp.task('sass', function () {
-    return gulp.src('./scss/**/ *.scss')
+    return gulp.src('./scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
@@ -20,7 +20,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('scss/**/*.scss', gulp.series('sass'))
+    gulp.watch('./scss/**/*.scss', gulp.series('sass'))
     // gulp.watch('src/static/js/**/*.js', gulp.series('scripts'))
 });
 
