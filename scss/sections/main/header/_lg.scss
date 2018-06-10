@@ -6,14 +6,15 @@
     .header-container {
       @include flex-row;
       justify-content: space-between;
-      box-shadow: 0 0 3px 1px rgba(0, 0, 0, .25);
+      box-shadow: 0 0 3px 1px $black;
       align-items: center;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 50px;
-      background: $bg;
+      padding: 0 15px;
+      background: $f-white;
       .menu-wrapper {
         @include flex-row;
         flex: 0 1 700px;
@@ -31,6 +32,7 @@
             margin-top: 3px;
             color: $text;
             border-bottom: solid 3px transparent;
+            font-family: "Raleway SemiBold";
             i {
               margin-right: 7.5px;
             }
@@ -46,7 +48,6 @@
       }
       .auth-wrapper {
         @include flex-row;
-        background: $blue;
         justify-content: space-around;
         flex: 0 1 200px;
         height: 100%;
@@ -56,14 +57,17 @@
           line-height: 25px;
         }
         .sign-in {
-          color: $white;
+          color: $blue;
+          &:hover {
+            text-decoration: underline;
+          }
         }
         .sign-up {
           text-align: center;
           display: block;
           width: 100px;
-          color: $white;
-          border: solid 2px $white;
+          color: $blue;
+          border: solid 2px $blue;
           opacity: .75;
           transition: all .25s ease-in-out;
           font-family: "Raleway SemiBold";
@@ -79,106 +83,55 @@
       }
     }
     .content-container {
-      @include flex-row;
       flex: 1;
-      flex-wrap: nowrap;
-      margin-top: 50px;
-      height: calc(100% - 50px);
-      padding: 15px 0;
-      justify-content: space-between;
-      align-items: flex-start;
-      .view-block {
-        @include flex-column;
-        margin: 0 15px;
-        cursor: pointer;
-        flex: 0 1 200px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        background: $bg;
-        height: 100px;
-        transition: all .25s ease-in-out;
-        box-shadow: 0 0 1px 1px $shadow;
-        color: $text;
-        &:hover {
-          box-shadow: 0 0 5px 1px $shadow;
-        }
-        h4 {
-          color: $title;
-          font-size: 2rem;
-        }
-      }
-      .links-block {
-        margin: 0 15px;
-        @include flex-row;
-        flex: 1;
-        justify-content: space-around;
-        align-items: center;
-        border-radius: 5px;
-        background: $bg;
-        height: 100px;
-        transition: all .25s ease-in-out;
-        box-shadow: 0 0 1px 1px $shadow;
-        color: $text;
-        .link {
-          @include flex-row;
-          cursor: pointer;
-          transition: all .25s ease-in-out;
-          border-radius: 17.5px;
-          width: 125px;
-          opacity: .5;
-          border: solid 2px $title;
-          justify-content: center;
-          align-items: center;
-          height: 35px;
-          color: $title;
-          &:hover {
-            opacity: 1;
-          }
-        }
-        .checked {
-          opacity: 1;
-          background: $title;
-          color: $bg;
-        }
-      }
+      height: calc(100% - 80px);
+      margin: 65px 15px 15px;
+      padding: 15px;
     }
     .control-container {
       @include flex-row;
-      align-content: space-around;
+      align-content: flex-start;
       z-index: 5;
       flex: 0 1 200px;
-      background: $blue;
-      margin-top: 49px;
+      margin: 65px 15px 15px;
       padding: 15px;
-      border-top: solid 1px $white;
-      height: calc(100% - 49px);
-      .control-title {
-        align-self: flex-start;
-        h2 {
-          font-size: 1.25rem;
-          color: $white;
+      height: calc(100% - 80px);
+      .statistic-wrapper {
+        @include flex-row;
+        margin-bottom: 1rem;
+        .control-title {
+          align-self: flex-start;
+          margin-bottom: 1rem;
+          h2 {
+            font-size: 1.25rem;
+            color: $grey;
+          }
+        }
+        .view-block {
+          @include flex-column;
+          transition: all .25s ease-in-out;
+          justify-content: center;
+          cursor: pointer;
+          align-items: center;
+          height: 100px;
+          flex: 0 1 100%;
+          background: $f-white;
+          box-shadow: 0 0 5px $black;
+          margin-bottom: 1rem;
+          &:hover {
+            box-shadow: 0 0 10px $black;
+          }
+          h4 {
+            color: $blue;
+            font-size: 1.75rem;
+            margin-bottom: .5rem;
+          }
+          p {
+            color: $grey;
+          }
         }
       }
-      .view-block {
-        @include flex-column;
-        transition: all .25s ease-in-out;
-        justify-content: center;
-        cursor: pointer;
-        align-items: center;
-        height: 100px;
-        flex: 0 1 100%;
-        background: $white;
-        box-shadow: 0 0 1px 1px $shadow;
-        &:hover {
-          box-shadow: 0 0 5px 3px $shadow;
-        }
-        h4 {
-          color: $title;
-          font-size: 2rem;
-        }
-      }
-      .links-block {
+      .links-wrapper {
         @include flex-row;
         align-items: center;
         height: auto;
@@ -188,35 +141,35 @@
           margin-bottom: 15px;
           h2 {
             font-size: 1.25rem;
-            color: $white;
+            color: $grey;
           }
         }
         .link {
           @include flex-row;
           align-items: center;
-          justify-content: center;
           flex: 0 10 100%;
-          height: 50px;
+          height: 40px;
+          padding-left: 15px;
           margin-bottom: 15px;
-          background: $white;
-          box-shadow: 0 1px 1px 1px $shadow;
+          background: $f-white;
+          box-shadow: 0 0 5px $black;
           transition: all .25s ease-in-out;
           cursor: pointer;
           overflow: hidden;
           &:hover {
             color: $white;
-            box-shadow: 0 1px 5px 3px $shadow, inset 200px 0 0 0 $green;
+            box-shadow: 0 0 5px $black, inset 200px 0 0 0 $blue;
           }
           i {
             margin-right: 7.5px;
           }
         }
         .checked {
-          background: $green;
+          background: $blue;
           color: $white;
           &:hover {
             color: $white;
-            box-shadow: 0 1px 5px 3px $shadow, inset 200px 0 0 0 $red;
+            box-shadow: 0 0 5px $black, inset 200px 0 0 0 $red;
           }
         }
       }
