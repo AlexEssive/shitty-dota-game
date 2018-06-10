@@ -1,11 +1,10 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  background: #eaeaea;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// Import main configs
+@import "config/colors";
+@import "config/settings";
+
+// Import mixins
+@import "mixins/main";
+
+// Import sections
+@import "sections/main";
