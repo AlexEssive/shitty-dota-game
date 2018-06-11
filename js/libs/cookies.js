@@ -27,14 +27,12 @@ function setCookie(name, value, options) {
 }
 
 function deleteCookie(name) {
-    name = name;
     setCookie(name, "", {
         expires: -1
     })
 }
 
 function getCookie(name) {
-    name = name;
     var matches = document.cookie.match(new RegExp(
         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
