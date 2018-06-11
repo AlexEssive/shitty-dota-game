@@ -33,7 +33,7 @@ function showTeam() {
             }
         }
     }
-    text+="</div><div class='col-1 team_kick'><a class='' href=''>kick</a></div>";
+    text+="</div><div class='col-1 team_kick'><a class='pointer' onclick='kickPlayers();'>kick</a></div>";
     text+="</div>";
     text+="<div class='row team_action'>" +
         "<div class='col-4'><button><i>Буткемп</i> <span>500$</span></button></div>" +

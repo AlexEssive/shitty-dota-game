@@ -1,13 +1,12 @@
-income = 100;
-cash = 111000;
-fans = 228;
-currentDay = 1;
+income = getCookie('income');
+cash = getCookie('cash');
+fans = getCookie('fans');
+currentDay = getCookie('currentDay');
 
 $(document).ready(function() {
     refreshGameBlock();
-    initGame();
     updateVariables();
-
+    initGame();
     //шо ета? // ya hz // аху*нно розробляєм
     // setInterval(function(){
     //     $('#string>span').addClass('blink_on');
@@ -26,6 +25,10 @@ function updateVariables() {
     $("#cash").text(cash + '$');
     $("#fans").text(fans);
     $("#day").text(currentDay);
+
+    teamName = getCookie('teamName');
+    teamLogo = getCookie('teamLogo');
+
     $("#team-name").text(teamName);
     $("#team-logo").attr('src',teamLogo);
 }

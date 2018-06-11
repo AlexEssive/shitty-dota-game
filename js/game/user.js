@@ -73,5 +73,9 @@ function logoutUser() {
     deleteCookie("teamName");
     deleteCookie("teamLogo");
     deleteCookie("players");
+    deleteCookie("currentDay");
+    deleteCookie("fans");
+    deleteCookie("income");
+    deleteCookie("cash");
     location.reload();
 }

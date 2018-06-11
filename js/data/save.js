@@ -15,9 +15,17 @@ function SaveTeam() {
             setCookie("players", JSON.stringify(urTeam));
         }
     };
+
+    this.saveData = function () {
+        setCookie("fans", fans);
+        setCookie("currentDay", currentDay);
+        setCookie("income", income);
+        setCookie("cash", cash);
+    };
 }
 
 function initSave() {
     saveTeam.savePlayerData();
     saveTeam.savePlayers();
+    saveTeam.saveData();
 }

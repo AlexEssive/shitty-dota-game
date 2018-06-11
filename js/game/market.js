@@ -26,7 +26,7 @@ function buyPlayer(id,cost,army,role) {
                 cash = cash - cost;
                 fans = fans + army;
                 updateVariables();
-                //+ закинути в cookie
+
                 document.getElementById('myModal').style.display = "none";
                 showPlayers();
             } else alert("Такой игрок уже в команде!");

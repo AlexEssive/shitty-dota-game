@@ -7,7 +7,7 @@ function showPlayers() {
     var players = allPlayers;
     var checked="",name="";
     refreshGameBlock();
-    var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
+    var text ="<div class='col-6' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
     for (var i=0; i < players.length; i++) {
         if (i===0) checked  = 'checked'; else checked='';
         text += "<li>" +
@@ -18,8 +18,8 @@ function showPlayers() {
             "</li>";
     }
     text += "</ul></div>";
-    text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
-        "<img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
+    // text += "<div class='col-2 pad0'><img class=\"button_arrow prev\" src='img/arrow_up.png' onclick='moveTop(this);'><br>" +
+        // "<img class=\"button_arrow next\" src='img/arrow_down.png' onclick='moveBot(this)'></div>";
     $('#gameBlock').append(text);
 
     showPlayerInfo();
