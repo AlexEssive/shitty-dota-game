@@ -151,13 +151,22 @@
               @include flex-row;
               justify-content: space-between;
               color: $grey;
+              transition: all .25s ease-in-out;
               i {
                 font-size: 1.5rem;
+                transition: all .25s ease-in-out;
+                transform: rotate(0);
+              }
+              .icon-rotate {
+                transform: rotate(180deg);
+              }
+              &:hover {
+                color: $blue;
               }
             }
             .drop-wrapper {
               position: absolute;
-              box-shadow: 0 0 5px $black;
+              box-shadow: 0 0 3px $black;
               right: 0;
               bottom: -200px;
               width: 100%;
