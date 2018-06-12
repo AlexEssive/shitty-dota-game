@@ -21,7 +21,11 @@ function showTeam() {
                 var n = i + 1;
                 text+="<div id='card" + n + "' class='team_card' onclick='playerAction(this);'>" +
                     "<div id='status" + n + "'><span>Status</span><input name='" + n + "' class='check-players' type='checkbox'></div>" +
-                    "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
+                    "<div class='row'><div class='col-6 padr'><<img src="
+                
+                " alt="
+                
+                "> src='img/players/" + player[i].Image + "'></div>" +
                     "<div class='col-6 team_info'>" +
                     "<span class='pos_span'>" + team[j].Position + "</span><br>" +
                     "<span>Name: " + player[i].Name + "</span><br>" +
