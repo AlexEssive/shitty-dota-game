@@ -19,8 +19,8 @@ function showTeam() {
         for (var j=0; j < team.length; j++) {
             if (team[j].Id===player[i].Id) {
                 var n = i + 1;
-                text+="<div id='card" + n + "' class='team_card' onclick='playerAction(this);'>" +
-                    "<div id='status" + n + "'><span>Status</span><input name='" + n + "' class='check-players' type='checkbox'></div>" +
+                text+="<div id='card" + n + "' class='team_card' oncontextmenu='playerAction(this);return false;'><label onclick='checkPlayer("+n+");' for='check" + n + "'>" +
+                    "<div id='status" + n + "'><span>Status</span><input id='check" + n + "' name='" + n + "' class='check-players' type='checkbox'></div>" +
                     "<div class='row'><div class='col-6 padr'><img src='img/players/" + player[i].Image + "'></div>" +
                     "<div class='col-6 team_info'>" +
                     "<span class='pos_span'>" + team[j].Position + "</span><br>" +
@@ -29,7 +29,7 @@ function showTeam() {
                     "<span>About: " + player[i].About + "</span>" +
                     "</div></div>" +
                     appendProgressBars(team[j], i + 1) +
-                    "</div>";
+                    "</label></div>";
             }
         }
     }
@@ -44,6 +44,11 @@ function showTeam() {
     //bottom team stats
     text+=appendTeamBars();
     $('#gameBlock').append(text);
+}
+
+function checkPlayer(n) {
+    if ($('#check'+n).is(':checked')) { $('#card'+n).attr('style','background: #576C7B'); } else
+    { $('#card'+n).attr('style','background: #576ab3'); }
 }
 
 function appendTeamBars(team) {

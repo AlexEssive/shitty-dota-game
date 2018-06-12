@@ -37,7 +37,7 @@ function initGame() {
     if (getCookie("userName")!==undefined) {
         initLoad();
     } else {
-        showLoginForm();
+        showTeam();
     }
 }
 
