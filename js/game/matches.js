@@ -48,9 +48,14 @@ function playMatch(id) {
     var result=false, message="";
     countUrRating() > countTeamRating(id) ? result=true : result=false;
     var random_result = iceFrog(result);
-    //random_result === result ? message = "Закономерная победа" : message = "Неожиданная победа";
+    random_result === result ? message = "Закономерная победа!" : message = "Неожиданная победа!";
     result = random_result;
-    return result;
+
+    var print_result = new Array();
+        print_result['outcome'] = result;
+        print_result['message'] = message;
+
+    return print_result;
 }
 
 function showTournaments() {
@@ -72,4 +77,17 @@ function iceFrog() {
     random < 11 ? result = !result : result = result;
     random > 90 ? result = result : result = !result;
     return result;
+}
+
+function playQvGame() {
+    var id = getRndInteger(1, allTeam.length).toString();
+
+    var playMatch = playMatch(id);
+
+    var qvResult = new Array();
+        qvResult['outcome'] = playMatch.outcome;
+        qvResult['message'] = playMatch.message;
+        qvResult['enemy'] = allTeam[parseInt(id)+1].Name;
+
+    return qvResult;
 }

@@ -6,6 +6,10 @@ function startNewDay()
     if (currentDay % 30 === 0) {
      cash += income;
     }
+
+    var playQv = playQvGame();
+    playQv.outcome ? alert("Win vs "+ playQv.enemy + " - " + playQv.message) : alert("Lose vs "+ playQv.enemy + " - " + playQv.message);
+
     updateVariables();
     initSave();
 }
