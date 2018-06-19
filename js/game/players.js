@@ -33,6 +33,7 @@ function showPlayersRating() {
     var text ="<div class='col-4' onClick='showPlayerInfo();'><ul id='player_list' class='player_list'>";
 
     //сортіровка allPlayers за параметром Skill
+    //почему сортує allPlayers тоже, а не просто rating?
     rating.sort(function (a, b) {
         if (a.Skill < b.Skill) { return 1; }
         if (a.Skill > b.Skill) { return -1; }

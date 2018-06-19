@@ -1,5 +1,4 @@
 function showMatches() {
-
     var matches = allMatches;
     refreshGameBlock();
     var list="<div class='matches_list'>";
@@ -46,9 +45,11 @@ function countUrMedia() {
 }
 
 function playMatch(id) {
-    //дописати рандомний виграш/програш
-    var result;
+    var result=false, message="";
     countUrRating() > countTeamRating(id) ? result=true : result=false;
+    var random_result = iceFrog(result);
+    //random_result === result ? message = "Закономерная победа" : message = "Неожиданная победа";
+    result = random_result;
     return result;
 }
 
@@ -63,4 +64,12 @@ function showTournaments() {
     list+="</div>";
 
     $('#gameBlock').append(list);
+}
+
+function iceFrog() {
+    var result;
+    var random = getRndInteger(1,100);
+    random < 11 ? result = !result : result = result;
+    random > 90 ? result = result : result = !result;
+    return result;
 }
