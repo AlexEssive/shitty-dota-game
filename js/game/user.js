@@ -34,6 +34,7 @@ function newUser() {
     cash = 111000;
     fans = 0;
     currentDay = 1;
+    income = 100;
 
     $("#team-logo").attr('src',teamLogo);
     $("#team-name").text(teamName);

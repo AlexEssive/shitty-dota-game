@@ -48,7 +48,7 @@ function playMatch(id) {
     var result=false, message="";
     countUrRating() > countTeamRating(id) ? result=true : result=false;
     var random_result = iceFrog(result);
-    random_result === result ? message = "Закономерная победа!" : message = "Неожиданная победа!";
+    random_result === result ? message = "Закономерный исход!" : message = "Неожиданный исход!";
     result = random_result;
 
     var print_result = new Array();
@@ -81,13 +81,15 @@ function iceFrog() {
 
 function playQvGame() {
     var id = getRndInteger(1, allTeam.length).toString();
-
-    var playMatch = playMatch(id);
+    console.log("random - "+id+" ("+allTeam[parseInt(id)].Name+")");
+    var playQv = playMatch(id);
 
     var qvResult = new Array();
-        qvResult['outcome'] = playMatch.outcome;
-        qvResult['message'] = playMatch.message;
-        qvResult['enemy'] = allTeam[parseInt(id)+1].Name;
+        qvResult['outcome'] = playQv.outcome;
+        qvResult['message'] = playQv.message;
+        qvResult['enemy'] = allTeam[parseInt(id)].Name;
+
+
 
     return qvResult;
 }
