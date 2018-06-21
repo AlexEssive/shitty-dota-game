@@ -81,15 +81,13 @@ function iceFrog() {
 
 function playQvGame() {
     var id = getRndInteger(1, allTeam.length).toString();
-    console.log("random - "+id+" ("+allTeam[parseInt(id)].Name+")");
+
     var playQv = playMatch(id);
 
     var qvResult = new Array();
         qvResult['outcome'] = playQv.outcome;
         qvResult['message'] = playQv.message;
         qvResult['enemy'] = allTeam[parseInt(id)].Name;
-
-
 
     return qvResult;
 }

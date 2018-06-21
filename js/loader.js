@@ -34,6 +34,7 @@ loadScript("game/team.js");
 loadScript("game/matches.js");
 loadScript("game/user.js");
 loadScript("game/main.js");
+loadScript("game/tournament.js");
 
 /***********************************************/
 
