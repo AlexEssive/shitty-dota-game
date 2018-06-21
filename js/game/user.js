@@ -80,3 +80,25 @@ function logoutUser() {
     deleteCookie("cash");
     location.reload();
 }
+
+function readyUser() {
+    urTeam = [
+        {"Id":"1", "Skill":"10", "Social":"10", "Media":"10", "Position":"1"},
+        {"Id":"2", "Skill":"10", "Social":"10", "Media":"10", "Position":"2"},
+        {"Id":"3", "Skill":"10", "Social":"10", "Media":"10", "Position":"3"},
+        {"Id":"4", "Skill":"10", "Social":"10", "Media":"10", "Position":"4"},
+        {"Id":"5", "Skill":"10", "Social":"10", "Media":"10", "Position":"5"}
+    ];
+    cash = 111000;
+    fans = 0;
+    currentDay = 1;
+    income = 100;
+
+    $("#team-logo").attr('src',teamLogo);
+    $("#team-name").text(teamName);
+
+    showTeam();
+    hideOverlay();
+    initSave();
+    updateVariables();
+}
