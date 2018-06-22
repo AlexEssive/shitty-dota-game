@@ -1,5 +1,9 @@
 function startNewDay()
 {
+    // if (getCookie("currentTournament")!=="") {
+    //     var playTournament = playTournament();
+    //     alert(playTournament);
+    // } else
     var playQv = playQvGame();
     playQv.outcome ? alert("Win vs "+ playQv.enemy + " - " + playQv.message) : alert("Lose vs "+ playQv.enemy + " (" + playQv.message + ")");
 
@@ -9,6 +13,7 @@ function startNewDay()
 
     currentDay++;
     if (currentDay % 30 === 0) {
+        //createTournament(1);
         income = countSponsorsCash();
         cash += income;
     }
