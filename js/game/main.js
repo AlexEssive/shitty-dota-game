@@ -28,6 +28,7 @@ function updateVariables() {
 
     teamName = getCookie('teamName');
     teamLogo = getCookie('teamLogo');
+    nextTournament = getCookie('nextTournament');
 
     $("#team-name").text(teamName);
     $("#team-logo").attr('src',teamLogo);

@@ -8,5 +8,15 @@
   {"Id":"7", "Name":"Liquid", "Country":"USA", "Logo":"liquid.png", "Teamplay":"80", "Strategy":"90", "Atmosphere":"100"},
   {"Id":"8", "Name":"LGD", "Country":"China", "Logo":"lgd.png", "Teamplay":"100", "Strategy":"70", "Atmosphere":"40"},
   {"Id":"9", "Name":"VG", "Country":"China", "Logo":"vg.png", "Teamplay":"50", "Strategy":"70", "Atmosphere":"30"},
-  {"Id":"10", "Name":"NewBee", "Country":"China", "Logo":"newbee.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"}
+  {"Id":"10", "Name":"NewBee", "Country":"China", "Logo":"newbee.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"11", "Name":"FlyToMoon", "Country":"Russia", "Logo":"fly.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"12", "Name":"IG", "Country":"China", "Logo":"newbee.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"13", "Name":"SlogniyMemas", "Country":"Russia", "Logo":"slogna.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"14", "Name":"PSG", "Country":"China", "Logo":"psg.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"15", "Name":"RubickBoyz", "Country":"Ukraine", "Logo":"boyz.png", "Teamplay":"100", "Strategy":"0", "Atmosphere":"100"},
+  {"Id":"16", "Name":"LFY", "Country":"China", "Logo":"lfy.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"17", "Name":"TNC", "Country":"China", "Logo":"tnc.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"18", "Name":"Team Secret", "Country":"China", "Logo":"secret.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"19", "Name":"Mineski", "Country":"China", "Logo":"mineski.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"},
+  {"Id":"20", "Name":"compLexity", "Country":"USA", "Logo":"complexity.png", "Teamplay":"60", "Strategy":"70", "Atmosphere":"80"}
 ]

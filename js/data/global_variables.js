@@ -27,3 +27,6 @@ var cash = '';
 var fans = '';
 var fansIncome = '';
 
+/**Турніри**/
+var nextTournament = '';
+

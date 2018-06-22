@@ -1,9 +1,11 @@
-function startNewDay()
-{
+function startNewDay() {
+
     // if (getCookie("currentTournament")!=="") {
-    //     var playTournament = playTournament();
-    //     alert(playTournament);
-    // } else
+    //     playTournament();
+    // } else if (checkTournament(nextTournament)) {
+    //         createTournament(nextTournament);
+    // } else {}
+
     var playQv = playQvGame();
     playQv.outcome ? alert("Win vs "+ playQv.enemy + " - " + playQv.message) : alert("Lose vs "+ playQv.enemy + " (" + playQv.message + ")");
 
