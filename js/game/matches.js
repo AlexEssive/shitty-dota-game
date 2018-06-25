@@ -91,3 +91,49 @@ function playQvGame() {
 
     return qvResult;
 }
+
+function toggleMore() {
+    $("#toggle_more").toggle();
+}
+
+function toggleMatch() {
+    $("#matchModal").slideToggle();
+}
+
+function showMatchGame(enemy, score, bo) {
+    toggleMatch();
+
+    var img1 = teamLogo;
+    var text1 = teamName;
+    var img2 = "img/teams/"+allTeam[enemy].Logo;
+    var text2 =  allTeam[enemy].Name;
+    var scores = "4:1";
+
+    $("#team_img_ur").attr('src',img1);
+    $("#team_img_enemy").attr('src',img2);
+    $("#team_text_ur").text(text1);
+    $("#team_text_enemy").text(text2);
+    $("#team_score").text(scores);
+    $("#team_bo").text(bo);
+}
+
+function playBoGame(enemy) {
+    var bo = randomBo();
+    var win=0,lose=0,result=false;
+    for(var i=0; i<bo; i++) {
+        var play = playMatch(enemy);
+        if (play.outcome) win++; else lose++;
+    }
+    win>lose ? result=true : result=false;
+    return result;
+}
+
+function randomBo() {
+    var result = 1, int = getRndInteger(1,3);
+    switch(int) {
+        case 1: result = 1; break;
+        case 2: result = 3; break;
+        case 3: result = 5; break;
+    }
+    return result;
+}

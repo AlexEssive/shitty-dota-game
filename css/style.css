@@ -8,6 +8,9 @@ html, body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.display-none {display: none;}
+.underline {text-decoration: underline;}
 .main {height:calc(100% - 165px);}
 .bold {font-weight:bold;}
 .text-center {text-align: center;}
@@ -466,7 +469,7 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.8);
 }
 
 .modal-content {
@@ -491,6 +494,32 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.match_modal {text-align: center;}
+
+.match_modal .row { margin-bottom: 10%;}
+
+.modal_content_match {
+    height: auto;
+    font-size: 28px;
+    color: white;
+    background-color: transparent;
+    margin: auto;
+    padding: 50px 100px;
+    width: 35%;
+}
+
+.teams_images img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.teams_more img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
 }
 
 /*//////end modal window////////*/
