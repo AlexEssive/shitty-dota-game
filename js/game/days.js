@@ -7,7 +7,9 @@ function startNewDay() {
     // } else {}
 
     var playQv = playQvGame();
-    playQv.outcome ? alert("Win vs "+ playQv.enemy + " - " + playQv.message) : alert("Lose vs "+ playQv.enemy + " (" + playQv.message + ")");
+    //playQv.outcome ? alert("You vs "+ playQv.enemy + " (" + playQv.win + ":" + playQv.lose + ") - bo" + playQv.bo) : alert("Lose vs "+ playQv.enemy + " (" + playQv.message + ")");
+    var score = playQv.win + ":" + playQv.lose;
+    showMatchGame(playQv.enemy, score, playQv.bo);
 
     fansIncome = countFansIncome();
     playQv.outcome ? fans = parseInt(fans) + fansIncome : fans = parseInt(fans) - fansIncome;

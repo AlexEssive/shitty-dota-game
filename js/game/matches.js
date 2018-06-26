@@ -45,15 +45,25 @@ function countUrMedia() {
 }
 
 function playMatch(id) {
-    var result=false, message="";
-    countUrRating() > countTeamRating(id) ? result=true : result=false;
-    var random_result = iceFrog(result);
-    random_result === result ? message = "Закономерный исход!" : message = "Неожиданный исход!";
-    result = random_result;
+    //random_result === result ? message = "Закономерный исход!" : message = "Неожиданный исход!";
+    //var result=false, message="";
+
+    var bo = randomBo();
+    var win=0,lose=0,result=false;
+
+    for(var i=0; i<bo; i++) {
+        countUrRating() > countTeamRating(id) ? result=true : result=false;
+        var random_result = iceFrog(result);
+        result = random_result;
+        if (result) win++; else lose++;
+    }
+    win>lose ? result=true : result=false;
 
     var print_result = new Array();
         print_result['outcome'] = result;
-        print_result['message'] = message;
+        print_result['win'] = win;
+        print_result['lose'] = lose;
+        print_result['bo'] = bo;
 
     return print_result;
 }
@@ -86,14 +96,16 @@ function playQvGame() {
 
     var qvResult = new Array();
         qvResult['outcome'] = playQv.outcome;
-        qvResult['message'] = playQv.message;
-        qvResult['enemy'] = allTeam[parseInt(id)].Name;
+        qvResult['win'] = playQv.win;
+        qvResult['lose'] = playQv.lose;
+        qvResult['bo'] = playQv.bo;
+        qvResult['enemy'] = allTeam[parseInt(id)].Id;
 
     return qvResult;
 }
 
 function toggleMore() {
-    $("#toggle_more").toggle();
+    $("#toggle_more").slideToggle();
 }
 
 function toggleMatch() {
@@ -129,7 +141,7 @@ function playBoGame(enemy) {
 }
 
 function randomBo() {
-    var result = 1, int = getRndInteger(1,3);
+    var result = 1, int = getRndInteger(1,4);
     switch(int) {
         case 1: result = 1; break;
         case 2: result = 3; break;
