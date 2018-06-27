@@ -50,12 +50,13 @@ function playMatch(id) {
 
     var bo = randomBo();
     var win=0,lose=0,result=false;
-
+    var counts = new Array();
     for(var i=0; i<bo; i++) {
         countUrRating() > countTeamRating(id) ? result=true : result=false;
         var random_result = iceFrog(result);
         result = random_result;
         if (result) win++; else lose++;
+        result ? counts[i] = true : counts[i] = false;
     }
     win>lose ? result=true : result=false;
 
@@ -64,6 +65,7 @@ function playMatch(id) {
         print_result['win'] = win;
         print_result['lose'] = lose;
         print_result['bo'] = bo;
+        print_result['counts'] = counts;
 
     return print_result;
 }
@@ -100,33 +102,52 @@ function playQvGame() {
         qvResult['lose'] = playQv.lose;
         qvResult['bo'] = playQv.bo;
         qvResult['enemy'] = allTeam[parseInt(id)].Id;
+        qvResult['counts'] = playQv.counts;
 
     return qvResult;
 }
 
 function toggleMore() {
     $("#toggle_more").slideToggle();
+
+    if ($("#toggle_menu").find('i').hasClass('icon-rotate'))
+    {$("#toggle_menu").find('i').removeClass('icon-rotate');}
+    else
+    {$("#toggle_menu").find('i').addClass('icon-rotate');}
 }
 
 function toggleMatch() {
     $("#matchModal").slideToggle();
 }
 
-function showMatchGame(enemy, score, bo) {
+function showMatchGame(enemy, score, bo, counts) {
     toggleMatch();
-
+    var win=0, lose=0;
     var img1 = teamLogo;
     var text1 = teamName;
     var img2 = "img/teams/"+allTeam[enemy].Logo;
     var text2 =  allTeam[enemy].Name;
-    var scores = "4:1";
 
     $("#team_img_ur").attr('src',img1);
     $("#team_img_enemy").attr('src',img2);
     $("#team_text_ur").text(text1);
     $("#team_text_enemy").text(text2);
-    $("#team_score").text(scores);
+    $("#team_score").text(score);
     $("#team_bo").text(bo);
+
+    $("#toggle_more ul").empty();
+
+    for(var i=0; i<bo; i++) {
+        var nom = i+1;
+        counts[i] ? win++ : lose++;
+        $("#toggle_more ul").append(
+        "<li><div class='row'>" +
+            "<div class='col-3'>Game "+nom+":</div>" +
+            "<div class='col-3'><img src='"+img1+"' alt=''></div>" +
+            "<div class='col-3'>"+win+":"+lose+"</div>" +
+            "<div class='col-3'><img src='"+img2+"' alt=''></div>" +
+        "</div></li>");
+    }
 }
 
 function playBoGame(enemy) {

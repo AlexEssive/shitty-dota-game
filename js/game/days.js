@@ -8,8 +8,8 @@ function startNewDay() {
 
     var playQv = playQvGame();
     //playQv.outcome ? alert("You vs "+ playQv.enemy + " (" + playQv.win + ":" + playQv.lose + ") - bo" + playQv.bo) : alert("Lose vs "+ playQv.enemy + " (" + playQv.message + ")");
-    var score = playQv.win + ":" + playQv.lose;
-    showMatchGame(playQv.enemy, score, playQv.bo);
+    var scores = playQv.win + ":" + playQv.lose;
+    showMatchGame(playQv.enemy, scores, playQv.bo, playQv.counts);
 
     fansIncome = countFansIncome();
     playQv.outcome ? fans = parseInt(fans) + fansIncome : fans = parseInt(fans) - fansIncome;

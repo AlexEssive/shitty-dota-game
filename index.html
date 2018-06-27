@@ -86,7 +86,7 @@
 <div id="matchModal" class="modal">
 	<div class="modal_content_match">
 		<div class="container match_modal">
-			<div class="row">BO <span id="team_bo"> 1</span></div>
+			<div class="row"> <div class="offset-4 col-4"><span>BO</span><span id="team_bo">1</span></div></div>
 			<div class="row teams_images">
 				<div class="col-4"><img id="team_img_ur" src="img/teams/navi.png" alt=""></div>
 				<div class="col-4"><span id="team_score">0:0</span></div>
@@ -98,26 +98,11 @@
 				<div class="col-4"><span id="team_text_enemy">Team 2</span></div>
 			</div>
 			<div class="row teams_about">
-				<div class="col-6 text-left"><span onclick="toggleMore();" class="underline pointer">Подробнее</span> <i class="fas fa-arrow-down"></i></div>
+				<div class="col-6 text-left "><span id="toggle_menu" onclick="toggleMore();" class="underline pointer">Подробнее <i class="fas fa-arrow-down rotate_animation"></i></span> </div>
 				<div class="col-6 text-right"><span onclick="toggleMatch();"  class="pointer">Ok</span> <i class="fas fa-arrow-right"></i></div>
 			</div>
 			<div id="toggle_more" class="row teams_more display-none">
 				<ul class="wdt100">
-					<li><div class="row">
-						<div class="col-4"><img src="img/teams/navi.png" alt=""></div>
-						<div class="col-4">0:1</div>
-						<div class="col-4"><img src="img/teams/navi.png" alt=""></div>
-					</div></li>
-					<li><div class="row">
-						<div class="col-4"><img src="img/teams/navi.png" alt=""></div>
-						<div class="col-4">1:1</div>
-						<div class="col-4"><img src="img/teams/navi.png" alt=""></div>
-					</div></li>
-					<li><div class="row">
-						<div class="col-4"><img src="img/teams/navi.png" alt=""></div>
-						<div class="col-4">2:1</div>
-						<div class="col-4"><img src="img/teams/navi.png" alt=""></div>
-					</div></li>
 				</ul>
 			</div>
 		</div>

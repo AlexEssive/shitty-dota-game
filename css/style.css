@@ -9,6 +9,8 @@ html, body {
   box-sizing: border-box;
 }
 
+.rotate_animation { transition: 0.5s ease-in-out; }
+.icon-rotate { transform: rotate(180deg); }
 .display-none {display: none;}
 .underline {text-decoration: underline;}
 .main {height:calc(100% - 165px);}
@@ -506,7 +508,7 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     color: white;
     background-color: transparent;
     margin: auto;
-    padding: 50px 100px;
+    padding: 50px 80px;
     width: 35%;
 }
 
