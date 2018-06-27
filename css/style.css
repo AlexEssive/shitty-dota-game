@@ -9,6 +9,8 @@ html, body {
   box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5,a,span,p,i,li {font-family: 'Open Sans', sans-serif;}
+
 .rotate_animation { transition: 0.5s ease-in-out; }
 .icon-rotate { transform: rotate(180deg); }
 .display-none {display: none;}
@@ -500,7 +502,7 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
 
 .match_modal {text-align: center;}
 
-.match_modal .row { margin-bottom: 10%;}
+.match_modal .row { margin-bottom: 5%;}
 
 .modal_content_match {
     height: auto;
@@ -508,7 +510,6 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     color: white;
     background-color: transparent;
     margin: auto;
-    padding: 50px 80px;
     width: 35%;
 }
 
@@ -524,7 +525,18 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
     margin: 0 auto;
 }
 
-/*//////end modal window////////*/
+.teams_more ul li {
+    background: #005073;
+    border-radius: 10px;
+    font-size: 22px;
+    border: 3px solid #189ad3;
+    padding: 10px;
+    margin-bottom: 1%;
+}
+
+.teams_more .row {margin: 0;}
+
+    /*//////end modal window////////*/
 
 .text-role {
     display: block;

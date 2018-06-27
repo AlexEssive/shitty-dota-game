@@ -45,11 +45,9 @@ function countUrMedia() {
 }
 
 function playMatch(id) {
-    //random_result === result ? message = "Закономерный исход!" : message = "Неожиданный исход!";
-    //var result=false, message="";
 
     var bo = randomBo();
-    var win=0,lose=0,result=false;
+    var win=0,lose=0,result=false,truebo=0;
     var counts = new Array();
     for(var i=0; i<bo; i++) {
         countUrRating() > countTeamRating(id) ? result=true : result=false;
@@ -57,6 +55,9 @@ function playMatch(id) {
         result = random_result;
         if (result) win++; else lose++;
         result ? counts[i] = true : counts[i] = false;
+        truebo++;
+        if (bo===3) if (win===2 || lose===2) break;
+        if (bo===5) if (win===3 || lose===3) break;
     }
     win>lose ? result=true : result=false;
 
@@ -66,6 +67,7 @@ function playMatch(id) {
         print_result['lose'] = lose;
         print_result['bo'] = bo;
         print_result['counts'] = counts;
+        print_result['truebo'] = truebo;
 
     return print_result;
 }
@@ -103,6 +105,7 @@ function playQvGame() {
         qvResult['bo'] = playQv.bo;
         qvResult['enemy'] = allTeam[parseInt(id)].Id;
         qvResult['counts'] = playQv.counts;
+        qvResult['truebo'] = playQv.truebo;
 
     return qvResult;
 }
@@ -111,16 +114,16 @@ function toggleMore() {
     $("#toggle_more").slideToggle();
 
     if ($("#toggle_menu").find('i').hasClass('icon-rotate'))
-    {$("#toggle_menu").find('i').removeClass('icon-rotate');}
+        {$("#toggle_menu").find('i').removeClass('icon-rotate');}
     else
-    {$("#toggle_menu").find('i').addClass('icon-rotate');}
+        {$("#toggle_menu").find('i').addClass('icon-rotate');}
 }
 
 function toggleMatch() {
     $("#matchModal").slideToggle();
 }
 
-function showMatchGame(enemy, score, bo, counts) {
+function showMatchGame(enemy, score, bo, counts, truebo) {
     toggleMatch();
     var win=0, lose=0;
     var img1 = teamLogo;
@@ -137,15 +140,15 @@ function showMatchGame(enemy, score, bo, counts) {
 
     $("#toggle_more ul").empty();
 
-    for(var i=0; i<bo; i++) {
+    for(var i=0; i<truebo; i++) {
         var nom = i+1;
         counts[i] ? win++ : lose++;
         $("#toggle_more ul").append(
         "<li><div class='row'>" +
             "<div class='col-3'>Game "+nom+":</div>" +
-            "<div class='col-3'><img src='"+img1+"' alt=''></div>" +
+            "<div class='col-3'><span>"+text1+"</span></div>" +
             "<div class='col-3'>"+win+":"+lose+"</div>" +
-            "<div class='col-3'><img src='"+img2+"' alt=''></div>" +
+            "<div class='col-3'><span>"+text2+"</span></div>" +
         "</div></li>");
     }
 }
