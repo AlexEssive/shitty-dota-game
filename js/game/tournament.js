@@ -1,18 +1,14 @@
 function createTournament(id) {
 
     nextTournament = id++; setCookie("nextTournament",nextTournament);
-
     var tournaments = allTournaments;
-    var error = false;
+    var error = false, teams=Array(), team_id=1;
 
     var name = tournaments[parseInt(id)].Name;
     var date1 = tournaments[parseInt(id)].Date_start;
     var date2 = tournaments[parseInt(id)].Date_end;
     var prize = tournaments[parseInt(id)].Prize;
     var count = tournaments[parseInt(id)].Members;
-
-    var teams=Array();
-    var team_id=1;
 
     for (var i=0; i < count-1; i++) {
         if (count<=allTeam.length)
@@ -111,15 +107,4 @@ function showTournamentGame() {
     //визначити БО поточного матчу
     //вивести результат по всім іграм зустрічі
     //вивести додаткову інфу
-
-}
-
-function playBO(enemy,bo) {
-    var win=0,lose=0,result=false;
-    for(var i=0; i<bo; i++) {
-        var play = playMatch(enemy);
-        if (play.outcome) win++; else lose++;
-    }
-    win>lose ? result=true : result=false;
-    return result;
 }

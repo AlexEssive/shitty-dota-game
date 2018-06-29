@@ -9,7 +9,8 @@ html, body {
   box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,a,span,p,i,li {font-family: 'Open Sans', sans-serif;}
+/*h1,h2,h3,h4,h5,a,span,p,i,li {font-family: 'Open Sans', sans-serif;}*/
+h1,h2,h3,h4,h5,a,span,p,i,li {font-family: 'Montserrat', sans-serif;}
 
 .rotate_animation { transition: 0.5s ease-in-out; }
 .icon-rotate { transform: rotate(180deg); }
@@ -559,3 +560,5 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
 .modal_login { margin-top: 5%;}
 
 .check-players {visibility: hidden; display: none;}
+
+.custom-file-control {z-index:1;}

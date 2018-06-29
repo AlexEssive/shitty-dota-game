@@ -7,11 +7,6 @@ $(document).ready(function() {
     refreshGameBlock();
     updateVariables();
     initGame();
-    //шо ета? // ya hz // аху*нно розробляєм
-    // setInterval(function(){
-    //     $('#string>span').addClass('blink_on');
-    //     setTimeout(function(){$('#string>span').removeClass('blink_on')},1500);
-    // },6000)
 });
 
 function refreshGameBlock()
