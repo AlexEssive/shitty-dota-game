@@ -108,3 +108,70 @@ function showTournamentGame() {
     //вивести результат по всім іграм зустрічі
     //вивести додаткову інфу
 }
+
+function showTournament() {
+    refreshGameBlock();
+    var text="";
+
+    var options = getTournaments();
+
+    text="<div class='container mar0 wdt100 tournaments_card'><div class='row'>" +
+            "<div class='col-4'><select id='tournament_id'>" +
+                options +
+            "</select></div>" +
+            "<div class='col-4'><button onclick='showCreateTournament()'>Создать турнир</button></div>" +
+            "<div class='col-4'><button onclick='showPlayTournament()'>Сыграть матч турнира</button></div>" +
+        "</div>" +
+        "<div class='row '>" +
+            "<div id='current_tournament' class='wdt100 about_tournament'></div>" +
+        "</div>" +
+        "<div class='row'>" +
+            "<ul id='result_table'></ul>" +
+        "</div>" +
+     "</div>";
+
+    $('#gameBlock').append(text);
+}
+
+function showCreateTournament() {
+    var text="";
+    var id = parseInt($("#tournament_id option:selected").val());
+
+    createTournament(id);
+    var tname=JSON.parse(getCookie("currentTournament"))[0].Name;
+    var tdate1=JSON.parse(getCookie("currentTournament"))[0].Date_start;
+    var tdate2=JSON.parse(getCookie("currentTournament"))[0].Date_end;
+    var tprize=JSON.parse(getCookie("currentTournament"))[0].Prize;
+    var tteams=JSON.parse(getCookie("currentTournament"))[0].Members;
+    var tmas=JSON.parse(getCookie("currentTournament"))[0].Teams;
+
+    text = "<div class='row'>" +
+            "<div class='col-2'>"+tname+"</div>" +
+            "<div class='col-2'>"+tdate1+"-"+tdate2+"</div>" +
+            "<div class='col-2'>"+tprize+"$</div>" +
+            "<div class='col-2'>"+tteams+" команд</div>"+
+            "<div class='col-2'>"+tmas+"</div>"+
+        "</div>";
+
+    $('#current_tournament').html(text);
+
+    $('#result_table').html("");
+}
+
+function showPlayTournament() {
+    var text="";
+    var tteams=JSON.parse(getCookie("currentTournament"))[0].Members;
+    var tmas=JSON.parse(getCookie("currentTournament"))[0].Teams;
+    playTournament();
+    text = "<li>1/"+tteams+": "+tmas+"</li>";
+    $('#result_table').append(text);
+}
+
+function getTournaments() {
+    var tournaments = allTournaments;
+    var list="";
+    for (var i=0; i < tournaments.length; i++) {
+        list+="<option value='"+i+"'>" + tournaments[i].Name + "</option>";
+    }
+    return list;
+}

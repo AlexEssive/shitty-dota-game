@@ -12,6 +12,7 @@ html, body {
 /*h1,h2,h3,h4,h5,a,span,p,i,li {font-family: 'Open Sans', sans-serif;}*/
 h1,h2,h3,h4,h5,a,span,p,i,li {font-family: 'Montserrat', sans-serif;}
 
+.mar0 {margin:0;}
 .rotate_animation { transition: 0.5s ease-in-out; }
 .icon-rotate { transform: rotate(180deg); }
 .display-none {display: none;}
@@ -562,3 +563,13 @@ drop-shadow(4px 4px 3px rgba(0,0,0,0.5));
 .check-players {visibility: hidden; display: none;}
 
 .custom-file-control {z-index:1;}
+
+.about_tournament {
+    background: darkgray;
+    color: white;
+    padding: 1%;
+}
+
+.tournaments_card .row {
+    padding-bottom: 3%;
+}
