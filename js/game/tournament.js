@@ -1,6 +1,6 @@
 function createTournament(id) {
 
-    nextTournament = id++; setCookie("nextTournament",nextTournament);
+    nextTournament = id+1; setCookie("nextTournament",nextTournament);
     var tournaments = allTournaments;
     var error = false, teams=Array(), team_id=1;
 
@@ -122,10 +122,10 @@ function showTournament() {
             "<div class='col-4'><button onclick='showCreateTournament()'>Создать турнир</button></div>" +
             "<div class='col-4'><button onclick='showPlayTournament()'>Сыграть матч турнира</button></div>" +
         "</div>" +
-        "<div class='row '>" +
-            "<div id='current_tournament' class='wdt100 about_tournament'></div>" +
-        "</div>" +
         "<div class='row'>" +
+            "<div id='current_tournament' class='wdt100 tt_table'></div>" +
+        "</div>" +
+        "<div class='row tt_result'>" +
             "<ul id='result_table'></ul>" +
         "</div>" +
      "</div>";
@@ -134,7 +134,7 @@ function showTournament() {
 }
 
 function showCreateTournament() {
-    var text="";
+
     var id = parseInt($("#tournament_id option:selected").val());
 
     createTournament(id);
@@ -145,12 +145,27 @@ function showCreateTournament() {
     var tteams=JSON.parse(getCookie("currentTournament"))[0].Members;
     var tmas=JSON.parse(getCookie("currentTournament"))[0].Teams;
 
-    text = "<div class='row'>" +
+    var team_on_tournament="";
+    if(tmas.length>0)
+    for (var i=0; i < tmas.length; i++) {
+        var nom = parseInt(tmas[i]);
+        team_on_tournament+=allTeam[nom].Name; if ((i+1)!==tmas.length) team_on_tournament+=", ";
+    }
+
+    text = "<div class='row tt_th'>" +
+            "<div class='col-2'>Название турнира</div>" +
+            "<div class='col-2'>Дата проведения</div>" +
+            "<div class='col-2'>Призовые</div>" +
+            "<div class='col-2'>К-во команд</div>"+
+            "<div class='col-4 breakword'>Список команд</div>"+
+        "</div>";
+
+    text+= "<div class='row tt_tr'>" +
             "<div class='col-2'>"+tname+"</div>" +
             "<div class='col-2'>"+tdate1+"-"+tdate2+"</div>" +
             "<div class='col-2'>"+tprize+"$</div>" +
             "<div class='col-2'>"+tteams+" команд</div>"+
-            "<div class='col-2'>"+tmas+"</div>"+
+            "<div class='col-4 breakword'>"+team_on_tournament+"</div>"+
         "</div>";
 
     $('#current_tournament').html(text);
@@ -163,6 +178,7 @@ function showPlayTournament() {
     var tteams=JSON.parse(getCookie("currentTournament"))[0].Members;
     var tmas=JSON.parse(getCookie("currentTournament"))[0].Teams;
     playTournament();
+    if (parseInt(tteams)===1) text = "<li>Greats, You win!</li>"; else
     text = "<li>1/"+tteams+": "+tmas+"</li>";
     $('#result_table').append(text);
 }
